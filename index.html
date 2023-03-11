@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/style.css" type="text/css" />
+  <title>PRERP - Login</title>
+  <link rel="icon" href="resources\PRERP_SA.png" type="image/x-icon" />
+</head>
+
+<body>
+  <div class="container">
+    <div class="forms-container">
+      <div class="signin-signup">
+        <form action="dashboard.html" name="loginform" class="sign-in-form">
+          <h2 class="title">Sign In</h2>
+          <div class="input-field">
+            <i class="fas fa-user"></i>
+            <input id="uname" type="text" name="uname" placeholder="Username" required />
+          </div>
+          <div class="input-field">
+            <i class="fas fa-lock"></i>
+            <input id="pwd" type="password" name="pass" placeholder="Password" required />
+          </div>
+          <!-- <div class="kli">
+              <input type="checkbox" class="check" />
+              Keep me logged in
+            </div> -->
+          <h3>
+            <a href="mailto:r1911705@presidency.edu.in">
+              Forgot your password?</a>
+          </h3>
+          <input id="btn" type="button" class="btn solid" value="Login" method="post" />
+        </form>
+      </div>
+    </div>
+
+    <div class="panels-container">
+      <div class="panel left-panel">
+        <div class="content">
+          <!-- <button class="btn transparent" id="sign-up-button">Sign Up</button> -->
+          <img src="resources\PRERP_W.png" alt="" class="image" />
+          <h3>PRESIDENCY - ERP</h3>
+          <p>An ERP System for Presidency made by Presidencians.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <h3>
+      &#169; 2022, The PRERP. All rights reserved.
+      <a href="https://github.com/decoder-17/" target="_blank">@coder_17</a>
+    </h3>
+  </footer>
+
+  <script type="module">
+
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyDSwa5QCOPlCwlAyRX7F8I-synwsE_lghs",
+      authDomain: "prerp-908a2.firebaseapp.com",
+      projectId: "prerp-908a2",
+      storageBucket: "prerp-908a2.appspot.com",
+      messagingSenderId: "112490917596",
+      appId: "1:112490917596:web:e150d64aff97fc3e42ce19",
+      measurementId: "G-12XTBRXK5K"
+    };
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    import {
+      getDatabase,
+      ref,
+      get,
+      set,
+      child,
+      update,
+      remove,
+    } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-database.js";
+    const db = getDatabase();
+    const uname = document.getElementById("uname");
+    const pwd = document.getElementById("pwd");
+    const btn = document.getElementById("btn");
+
+    function validation() {
+      if (uname.value === "" || pwd.value === "") {
+        alert("Please enter your credentials.");
+        location.reload();
+      } else {
+        const dbref = ref(db);
+        get(child(dbref, "StudentList/" + uname.value)).then((snapshot) => {
+          if (snapshot.exists()) {
+            if (snapshot.val().password == pwd.value) {
+              loginStd(snapshot.val());
+            } else {
+              alert("The entered Username or Password is invalid.");
+              location.reload();
+            }
+          }
+        });
+        get(child(dbref, "FacultyList/" + uname.value)).then((snapshot) => {
+          if (snapshot.exists()) {
+            if (snapshot.val().password == pwd.value) {
+              loginFac(snapshot.val());
+            } else {
+              alert("The entered Username or Password is invalid.");
+              location.reload();
+            }
+          }
+        });
+        get(child(dbref, "AdminList/" + uname.value)).then((snapshot) => {
+          if (snapshot.exists()) {
+            if (snapshot.val().password == pwd.value) {
+              loginAdm(snapshot.val());
+            } else {
+              alert("The entered Username or Password is invalid.");
+              location.reload();
+            }
+          }
+        });
+      }
+    }
+
+    function loginStd(user) {
+      let keepLoggedIn = document.getElementsByClassName("check").checked;
+      if (!keepLoggedIn) {
+        sessionStorage.setItem("user", JSON.stringify(user));
+        window.location = "dashboard.html";
+      } else {
+        localStorage.setItem("keepLoggedIn", "yes");
+        localStorage.setItem("user", JSON.stringify(user));
+        window.location = "dashboard.html";
+      }
+    }
+
+    function loginAdm(user) {
+      let keepLoggedIn = document.getElementsByClassName("check").checked;
+      if (!keepLoggedIn) {
+        sessionStorage.setItem("user", JSON.stringify(user));
+        window.location = "admin/dashboard.html";
+      } else {
+        localStorage.setItem("keepLoggedIn", "yes");
+        localStorage.setItem("user", JSON.stringify(user));
+        window.location = "admin/dashboard.html";
+      }
+    }
+
+    function loginFac(user) {
+      let keepLoggedIn = document.getElementsByClassName("check").checked;
+      if (!keepLoggedIn) {
+        sessionStorage.setItem("user", JSON.stringify(user));
+        window.location = "faculty/dashboard.html";
+      } else {
+        localStorage.setItem("keepLoggedIn", "yes");
+        localStorage.setItem("user", JSON.stringify(user));
+        window.location = "faculty/dashboard.html";
+      }
+    }
+
+    btn.addEventListener("click", validation);
+  </script>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.slim.js"
+  integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/66923dcbbb.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"
+  integrity="sha512-E8QSvWZ0eCLGk4km3hxSsNmGWbLtSCSUcewDQPQWZF6pEU8GlT8a5fF32wOl1i8ftdMhssTrF/OhyGWwonTcXA=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</html>

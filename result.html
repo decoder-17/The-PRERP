@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet" />
+  <link rel="icon" href="resources\PRERP_SA.png" type="image/x-icon" />
+  <title>PRERP - Result</title>
+</head>
+
+<body>
+  <div class="container">
+    <aside>
+      <div class="top">
+        <div class="logo">
+          <a href="dashboard.html"><img src="resources\PRERP_SA.png" alt="" />
+          </a>
+          <h1>PR<span class="title">ERP</span></h1>
+          <div class="close" id="close-btn">
+            <span class="material-icons-sharp"> close </span>
+          </div>
+        </div>
+        <div class="sidebar">
+          <a href="dashboard.html"><span class="material-icons-sharp"> grid_view </span>
+            <h3>Dashboard</h3>
+          </a>
+          <a href="profile.html"><span class="material-icons-sharp"> person </span>
+            <h3>Profile</h3>
+          </a>
+
+          <a href="attendance.html"><span class="material-icons-sharp"> calendar_month </span>
+            <h3>Attendance</h3>
+          </a>
+          <a href="assignment.html"><span class="material-icons-sharp"> assignment </span>
+            <h3> Assignment</h3>
+          </a>
+          <a href="timetable.html"><span class="material-icons-sharp"> calendar_month </span>
+            <h3>Timetable</h3>
+          </a>
+          <a href="syllabus.html"><span class="material-icons-sharp">
+              summarize
+            </span>
+            <h3>Syllabus</h3>
+          </a>
+          <a href="clubactivities.html"><span class="material-icons-sharp">
+              groups
+            </span>
+            <h3>Club Activities</h3>
+          </a>
+          <a href="examtimetable.html"><span class="material-icons-sharp"> calendar_month </span>
+            <h3>Exam Timetable</h3>
+          </a>
+          <a href="result.html" class="active"><span class="material-icons-sharp"> summarize </span>
+            <h3>Result</h3>
+          </a>
+          <a href="feedback.html"><span class="material-icons-sharp"> forum </span>
+            <h3>Feedback</h3>
+          </a>
+
+          <a href="updatepassword.html"><span class="material-icons-sharp">
+              manage_accounts
+            </span>
+            <h3>Update Password</h3>
+          </a>
+
+          <a href="index.html" onclick="return confirm('Are you sure you want to Logout?')"><span
+              class="material-icons-sharp"> logout </span>
+            <h3>Logout</h3>
+          </a>
+        </div>
+      </div>
+    </aside>
+
+    <main id="result">
+      <h1>Academic Report</h1>
+
+      <div class="date">
+        <!-- <input type="date" value="2022-08-26" /> -->
+        <label for="date">26 / 08 / 2022</label>
+      </div>
+
+      <!-- <div class="insights">
+          <div class="attendance">
+            <span class="material-icons-sharp"> calendar_month </span>
+            <div class="middle">
+              <div class="left">
+                <h3>Total Attendance</h3>
+                <h1>90%</h1>
+              </div>
+              <div class="progress">
+                <svg>
+                  <circle cx="38" cy="38" r="36"></circle>
+                </svg>
+                <div class="number">
+                  <p>90%</p>
+                </div>
+              </div>
+            </div>
+            <small class="text-muted">Last week</small>
+          </div>
+          <div class="csp">
+            <span class="material-icons-sharp"> analytics </span>
+            <div class="middle">
+              <div class="left">
+                <h3>Current Semester Percentage</h3>
+                <h1>88%</h1>
+              </div>
+              <div class="progress">
+                <svg>
+                  <circle cx="38" cy="38" r="36"></circle>
+                </svg>
+                <div class="number">
+                  <p>95.9%</p>
+                </div>
+              </div>
+            </div>
+            <small class="text-muted">Last semester</small>
+          </div>
+          <div class="op">
+            <span class="material-icons-sharp"> assessment </span>
+            <div class="middle">
+              <div class="left">
+                <h3>Overall Percentage</h3>
+                <h1>88.78%</h1>
+              </div>
+              <div class="progress">
+                <svg>
+                  <circle cx="38" cy="38" r="36"></circle>
+                </svg>
+                <div class="number">
+                  <p>89%</p>
+                </div>
+              </div>
+            </div>
+            <small class="text-muted">Last semester</small>
+          </div>
+        </div> -->
+
+      <div class="recent-activity">
+        <h2>Midterm Examindation</h2>
+        <table>
+          <thread>
+            <tr>
+              <th>Sl. No.</th>
+              <th>Subject</th>
+              <th>Maximum Marks</th>
+              <th>Passing Marks</th>
+              <th>Secured Marks</th>
+              <th>Grade</th>
+              <th></th>
+            </tr>
+          </thread>
+          <tbody>
+            <tr>
+              <td>1.</td>
+              <td id="sub1"></td>
+              <td id="totalmarks"></td>
+              <td id="minmarks"></td>
+              <td id="securedmarks"></td>
+              <td id="grade"></td>
+            </tr>
+          </tbody>
+          <tbody>
+            <tr>
+              <td>2.</td>
+              <td id="sub2"></td>
+              <td id="totalmarks2"></td>
+              <td id="minmarks2"></td>
+              <td id="securedmarks2">
+              </td>
+              <td id="grade2"></td>
+            </tr>
+          </tbody>
+          <tbody>
+            <tr>
+              <td>3.</td>
+              <td id="sub3"></td>
+              <td id="totalmarks3"></td>
+              <td id="minmarks3"></td>
+              <td id="securedmarks3">
+              </td>
+              <td id="grade3"></td>
+            </tr>
+          </tbody>
+          <tbody>
+            <tr>
+              <td>4.</td>
+              <td id="sub4"></td>
+              <td id="totalmarks4"></td>
+              <td id="minmarks4"></td>
+              <td id="securedmarks4">
+              </td>
+              <td id="grade4"></td>
+            </tr>
+          </tbody>
+          <tbody>
+            <tr>
+              <td>5.</td>
+              <td id="sub5"></td>
+              <td id="totalmarks5"></td>
+              <td id="minmarks5"></td>
+              <td id="securedmarks5">
+              </td>
+              <td id="grade5"></td>
+            </tr>
+          </tbody>
+          <tbody>
+            <tr>
+              <td></td>
+              <td id="total"><b>Total</b></td>
+              <td id="total_totalmarks"></td>
+              <td id="totalminmarks"></td>
+              <td id="totalsecuredmarks">
+              </td>
+              <td id="finalgrade"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="recent-activity">
+        <h2>Prefinal Examindation</h2>
+        <table>
+          <thread>
+            <tr>
+              <th>Sl. No.</th>
+              <th>Subject</th>
+              <th>Maximum Marks</th>
+              <th>Passing Marks</th>
+              <th>Secured Marks</th>
+              <th>Grade</th>
+              <th></th>
+            </tr>
+          </thread>
+          <tbody>
+            <tr>
+              <td>1.</td>
+              <td id="psub1"></td>
+              <td id="ptotalmarks"></td>
+              <td id="pminmarks"></td>
+              <td id="psecuredmarks">
+              </td>
+              <td id="pgrade"></td>
+            </tr>
+          </tbody>
+          <tbody>
+            <tr>
+              <td>2.</td>
+              <td id="psub2"></td>
+              <td id="ptotalmarks2"></td>
+              <td id="pminmarks2"></td>
+              <td id="psecuredmarks2">
+              </td>
+              <td id="pgrade2"></td>
+            </tr>
+          </tbody>
+          <tbody>
+            <tr>
+              <td>3.</td>
+              <td id="psub3"></td>
+              <td id="ptotalmarks3"></td>
+              <td id="pminmarks3"></td>
+              <td id="psecuredmarks3">
+              </td>
+              <td id="pgrade3"></td>
+            </tr>
+          </tbody>
+          <tbody>
+            <tr>
+              <td>4.</td>
+              <td id="psub4"></td>
+              <td id="ptotalmarks4"></td>
+              <td id="pminmarks4"></td>
+              <td id="psecuredmarks4">
+              </td>
+              <td id="pgrade4"></td>
+            </tr>
+          </tbody>
+          <tbody>
+            <tr>
+              <td>5.</td>
+              <td id="psub5"></td>
+              <td id="ptotalmarks5"></td>
+              <td id="pminmarks5"></td>
+              <td id="psecuredmarks5">
+              </td>
+              <td id="pgrade5"></td>
+            </tr>
+          </tbody>
+          <tbody>
+            <tr>
+              <td></td>
+              <td id="ptotal"><b>Total</b></td>
+              <td id="ptotal_totalmarks"></td>
+              <td id="ptotalminmarks"></td>
+              <td id="ptotalsecuredmarks">
+              </td>
+              <td id="pfinalgrade"></td>
+            </tr>
+          </tbody>
+        </table>
+        <br>
+      </div>
+      <br><br>
+    </main>
+
+    <div class="right">
+      <div class="top">
+        <button id="menu-btn">
+          <span class="material-icons-sharp"> menu </span>
+        </button>
+        <div class="theme-toggler" id="theme">
+          <span class="material-icons-sharp active"> light_mode </span>
+          <span class="material-icons-sharp"> dark_mode </span>
+        </div>
+        <div class="profile">
+          <div class="info">
+            <p>Hey, <b id="user"></b></p>
+            <small class="text-muted">Student <span id="username"></span> </small>
+          </div>
+          <a href="profile.html">
+            <div class="profile-photo">
+              <img src="resources\download.webp" alt="avatar" />
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="recent-updates">
+        <h2>Recent Updates</h2>
+        <div class="updates">
+          <div class="update">
+            <div class="profile-photo">
+              <img src="..\resources\848351_cup_512x512.png" alt="avatar" />
+            </div>
+            <div class="message">
+              <p><b>XACTITUDE 2022</b> at Kristu Jayanti College.</p>
+              <small class="text-muted">Team TECHNOZIA won the overalls.</small>
+            </div>
+          </div>
+          <div class="update">
+            <div class="profile-photo">
+              <img src="..\resources\848351_cup_512x512.png" alt="avatar" />
+            </div>
+            <div class="message">
+              <p><b># 2022</b> at Charan's Degree College..</p>
+              <small class="text-muted">Team TECHNOZIA won the overalls.</small>
+            </div>
+          </div>
+          <div class="update">
+            <div class="profile-photo">
+              <img src="..\resources\848351_cup_512x512.png" alt="avatar" />
+            </div>
+            <div class="message">
+              <p><b>SYNTAXIA 2022</b> at St. Joseph's College.</p>
+              <small class="text-muted">Team TECHNOZIA won the overalls.</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="upcoming-events">
+        <h2>Upcoming Events</h2>
+        <div class="update">
+          <div class="icon">
+            <span class="material-icons-sharp"> event </span>
+          </div>
+          <div class="right">
+            <div class="info">
+              <h3>Prefinals</h3>
+              <small class="text-muted">From 2nd August, 2022.</small>
+            </div>
+            <h5 class="success">Lab Prefinals.</h5>
+            <h3>
+              Attendance is mandatory.
+            </h3>
+          </div>
+        </div>
+        <div class="update">
+          <div class="icon">
+            <span class="material-icons-sharp"> event </span>
+          </div>
+          <div class="right">
+            <div class="info">
+              <h3>Fees Payment Reminder</h3>
+              <small class="text-muted">By 20th Augus, 2022.</small>
+            </div>
+            <h5 class="danger">
+              Students with outstanding payment won't be given their hallticket.
+
+            </h5>
+            <h3>
+              Everyone should pay their fees within the date.
+            </h3>
+          </div>
+        </div>
+        <div class="update">
+          <div class="icon">
+            <span class="material-icons-sharp"> event </span>
+          </div>
+          <div class="right">
+            <div class="info">
+              <h3>Practical Finals</h3>
+              <small class="text-muted">From 24th August, 2022.</small>
+            </div>
+            <h5 class="success">
+              All the best to appearing students.
+            </h5>
+            <h3>
+              Everyone is requested to be in uniform and carry their hallticket and ID card.
+            </h3>
+          </div>
+        </div>
+
+        <div class="addupdate" id="print">
+          <div class="icon">
+            <span class="material-icons-sharp">
+              add
+            </span>
+          </div>
+          <div class="adupd">
+            <div class="info">
+              <h3>Print Result</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../js/index.js"></script>
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.1/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.9.1/firebase-analytics.js";
+
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyBaBKqVSNg1X9YhByu-Eq-jsll5Rr3ZSBo",
+        authDomain: "theprerp.firebaseapp.com",
+        projectId: "theprerp",
+        storageBucket: "theprerp.appspot.com",
+        messagingSenderId: "965186345528",
+        appId: "1:965186345528:web:00d25bf1b43ad61d86e4cd",
+        measurementId: "G-VQKKY7Q88B",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+      import {
+        getDatabase,
+        ref,
+        get,
+        set,
+        child,
+        update,
+        remove,
+      } from "https://www.gstatic.com/firebasejs/9.9.1/firebase-database.js";
+      const db = getDatabase();
+
+      let userid = document.getElementById('user');
+      let logout = document.getElementById('logout');
+      let usernamestu = document.getElementById('username');
+      var percentage;
+      var currentuser = null;
+
+      let usern;
+
+      function username() {
+        let keepLoggedIn = localStorage.getItem("keepLoggedIn");
+
+        if (keepLoggedIn == "yes")
+          currentuser = JSON.parse(localStorage.getItem('user'));
+        else
+          currentuser = JSON.parse(sessionStorage.getItem('user'));
+      }
+
+      function signout() {
+        sessionStorage.removeItem('user');
+        localStorage.removeItem('user');
+        localStorage.removeItem('keepLoggedIn');
+        window.location = "index.html";
+      }
+
+      window.onload = function () {
+        username();
+        if (currentuser != null) {
+          user.innerText = currentuser.name;
+        }
+        if (currentuser.sub1 != null) {
+          sub1.innerText = currentuser.sub1;
+          totalmarks.innerText = currentuser.totalmarks1;
+          minmarks.innerText = (totalmarks.innerText) * .40;
+          securedmarks.innerText = currentuser.securedmarks1;
+          percentage = (securedmarks.innerText / totalmarks.innerText) * 100;
+          grade.innerText = ((percentage >= 90) ? 'O' : ((percentage >= 80) ? 'A' : ((percentage >= 70 ? 'B' : ((percentage < 70 && percentage > 40) ? 'C' : 'F')))));
+
+          sub2.innerText = currentuser.sub2;
+          totalmarks2.innerText = currentuser.totalmarks2;
+          minmarks2.innerText = (totalmarks2.innerText) * .40;
+          securedmarks2.innerText = currentuser.securedmarks2;
+          percentage = (securedmarks2.innerText / totalmarks2.innerText) * 100;
+          grade2.innerText = ((percentage >= 90) ? 'O' : ((percentage >= 80) ? 'A' : ((percentage >= 70 ? 'B' : ((percentage < 70 && percentage > 40) ? 'C' : 'F')))));
+
+          sub3.innerText = currentuser.sub3;
+          totalmarks3.innerText = currentuser.totalmarks3;
+          minmarks3.innerText = (totalmarks3.innerText) * .40;
+          securedmarks3.innerText = currentuser.securedmarks3;
+          percentage = (securedmarks3.innerText / totalmarks3.innerText) * 100;
+          grade3.innerText = ((percentage >= 90) ? 'O' : ((percentage >= 80) ? 'A' : ((percentage >= 70 ? 'B' : ((percentage < 70 && percentage > 40) ? 'C' : 'F')))));
+
+          sub4.innerText = currentuser.sub4;
+          totalmarks4.innerText = currentuser.totalmarks4;
+          minmarks4.innerText = (totalmarks4.innerText) * .40;
+          securedmarks4.innerText = currentuser.securedmarks4;
+          percentage = (securedmarks4.innerText / totalmarks4.innerText) * 100;
+          grade4.innerText = ((percentage >= 90) ? 'O' : ((percentage >= 80) ? 'A' : ((percentage >= 70 ? 'B' : ((percentage < 70 && percentage > 40) ? 'C' : 'F')))));
+
+          sub5.innerText = currentuser.sub5;
+          totalmarks5.innerText = currentuser.totalmarks5;
+          minmarks5.innerText = (totalmarks5.innerText) * .40;
+          securedmarks5.innerText = currentuser.securedmarks5;
+          percentage = (securedmarks5.innerText / totalmarks5.innerText) * 100;
+          grade5.innerText = ((percentage >= 90) ? 'O' : ((percentage >= 80) ? 'A' : ((percentage >= 70 ? 'B' : ((percentage < 70 && percentage > 40) ? 'C' : 'F')))));
+
+          total_totalmarks.innerText = Number(totalmarks.innerText) + Number(totalmarks2.innerText) + Number(totalmarks3.innerText) + Number(totalmarks4.innerText) + Number(totalmarks5.innerText);
+          totalminmarks.innerText = Number(total_totalmarks.innerText) * .4;
+          totalsecuredmarks.innerText = Number(securedmarks.innerText) + Number(securedmarks2.innerText) + Number(securedmarks3.innerText) + Number(securedmarks4.innerText) + Number(securedmarks5.innerText);
+          percentage = (totalsecuredmarks.innerText / total_totalmarks.innerText) * 100;
+          finalgrade.innerText = ((percentage >= 90) ? 'O' : ((percentage >= 80) ? 'A' : ((percentage >= 70 ? 'B' : ((percentage < 70 && percentage > 40) ? 'C' : 'F')))));
+
+
+          psub1.innerText = currentuser.psub1;
+          ptotalmarks.innerText = currentuser.ptotalmarks1;
+          pminmarks.innerText = (ptotalmarks.innerText) * .40;
+          psecuredmarks.innerText = currentuser.psecuredmarks1;
+          percentage = (psecuredmarks.innerText / ptotalmarks.innerText) * 100;
+          pgrade.innerText = ((percentage >= 90) ? 'O' : ((percentage >= 80) ? 'A' : ((percentage >= 70 ? 'B' : ((percentage < 70 && percentage > 40) ? 'C' : 'F')))));
+
+          psub2.innerText = currentuser.psub2;
+          ptotalmarks2.innerText = currentuser.ptotalmarks2;
+          pminmarks2.innerText = (ptotalmarks2.innerText) * .40;
+          psecuredmarks2.innerText = currentuser.psecuredmarks2;
+          percentage = (psecuredmarks2.innerText / ptotalmarks2.innerText) * 100;
+          pgrade2.innerText = ((percentage >= 90) ? 'O' : ((percentage >= 80) ? 'A' : ((percentage >= 70 ? 'B' : ((percentage < 70 && percentage > 40) ? 'C' : 'F')))));
+
+          psub3.innerText = currentuser.psub3;
+          ptotalmarks3.innerText = currentuser.ptotalmarks3;
+          pminmarks3.innerText = (ptotalmarks3.innerText) * .40;
+          psecuredmarks3.innerText = currentuser.psecuredmarks3;
+          percentage = (psecuredmarks3.innerText / ptotalmarks3.innerText) * 100;
+          pgrade3.innerText = ((percentage >= 90) ? 'O' : ((percentage >= 80) ? 'A' : ((percentage >= 70 ? 'B' : ((percentage < 70 && percentage > 40) ? 'C' : 'F')))));
+
+          psub4.innerText = currentuser.psub4;
+          ptotalmarks4.innerText = currentuser.ptotalmarks4;
+          pminmarks4.innerText = (ptotalmarks4.innerText) * .40;
+          psecuredmarks4.innerText = currentuser.psecuredmarks4;
+          percentage = (psecuredmarks4.innerText / ptotalmarks4.innerText) * 100;
+          pgrade4.innerText = ((percentage >= 90) ? 'O' : ((percentage >= 80) ? 'A' : ((percentage >= 70 ? 'B' : ((percentage < 70 && percentage > 40) ? 'C' : 'F')))));
+
+          psub5.innerText = currentuser.psub5;
+          ptotalmarks5.innerText = currentuser.ptotalmarks5;
+          pminmarks5.innerText = (ptotalmarks5.innerText) * .40;
+          psecuredmarks5.innerText = currentuser.psecuredmarks5;
+          percentage = (psecuredmarks5.innerText / ptotalmarks5.innerText) * 100;
+          pgrade5.innerText = ((percentage >= 90) ? 'O' : ((percentage >= 80) ? 'A' : ((percentage >= 70 ? 'B' : ((percentage < 70 && percentage > 40) ? 'C' : 'F')))));
+
+          ptotal_totalmarks.innerText = Number(ptotalmarks.innerText) + Number(ptotalmarks2.innerText) + Number(ptotalmarks3.innerText) + Number(ptotalmarks4.innerText) + Number(ptotalmarks5.innerText);
+          ptotalminmarks.innerText = Number(ptotal_totalmarks.innerText) * .4;
+          ptotalsecuredmarks.innerText = Number(psecuredmarks.innerText) + Number(psecuredmarks2.innerText) + Number(psecuredmarks3.innerText) + Number(psecuredmarks4.innerText) + Number(psecuredmarks5.innerText);
+          percentage = (ptotalsecuredmarks.innerText / ptotal_totalmarks.innerText) * 100;
+          pfinalgrade.innerText = ((percentage >= 90) ? 'O' : ((percentage >= 80) ? 'A' : ((percentage >= 70 ? 'B' : ((percentage < 70 && percentage > 40) ? 'C' : 'F')))));
+
+        }
+        else {
+          sub1.innerText = "Machine Learning";
+          totalmarks.innerText = "50"
+          minmarks.innerText = "20";
+          securedmarks.innerText = "Not assigned";
+          grade.innerText = "Not assigned";
+
+          sub2.innerText = "System Programming"
+          totalmarks2.innerText = "50"
+          minmarks2.innerText = "20"
+          securedmarks2.innerText = "Not assigned"
+          grade2.innerText = "Not assigned"
+
+          sub3.innerText = "Web Programming"
+          totalmarks3.innerText = "35"
+          minmarks3.innerText = "14"
+          securedmarks3.innerText = "Not assigned"
+          grade3.innerText = "Not assigned"
+
+          sub4.innerText = "Entrepreneurship and Innovation"
+          totalmarks4.innerText = "35"
+          minmarks4.innerText = "14"
+          securedmarks4.innerText = "Not assigned"
+          grade4.innerText = "Not assigned"
+
+          sub5.innerText = "Professional and Business Communication"
+          totalmarks5.innerText = "50"
+          minmarks5.innerText = "20"
+          securedmarks5.innerText = "Not assigned"
+          grade5.innerText = "Not assigned"
+
+          total_totalmarks.innerText = "220"
+          totalminmarks.innerText = "88"
+          totalsecuredmarks.innerText = "Not assigned"
+          finalgrade.innerText = "Not assigned"
+
+
+          psub1.innerText = "Machine Learning";
+          ptotalmarks.innerText = "100"
+          pminmarks.innerText = "40";
+          psecuredmarks.innerText = "Not assigned";
+          pgrade.innerText = "Not assigned";
+
+          psub2.innerText = "System Programming"
+          ptotalmarks2.innerText = "100"
+          pminmarks2.innerText = "40"
+          psecuredmarks2.innerText = "Not assigned"
+          pgrade2.innerText = "Not assigned"
+
+          psub3.innerText = "Web Programming"
+          ptotalmarks3.innerText = "70"
+          pminmarks3.innerText = "28"
+          psecuredmarks3.innerText = "Not assigned"
+          pgrade3.innerText = "Not assigned"
+
+          psub4.innerText = "Entrepreneurship and Innovation"
+          ptotalmarks4.innerText = "70"
+          pminmarks4.innerText = "28"
+          psecuredmarks4.innerText = "Not assigned"
+          pgrade4.innerText = "Not assigned"
+
+          psub5.innerText = "Professional and Business Communication"
+          ptotalmarks5.innerText = "100"
+          pminmarks5.innerText = "40"
+          psecuredmarks5.innerText = "Not assigned"
+          pgrade5.innerText = "Not assigned"
+
+          ptotal_totalmarks.innerText = "440"
+          ptotalminmarks.innerText = "176"
+          ptotalsecuredmarks.innerText = "Not assigned"
+          pfinalgrade.innerText = "Not assigned"
+        }
+      }
+
+    </script>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"
+  integrity="sha512-E8QSvWZ0eCLGk4km3hxSsNmGWbLtSCSUcewDQPQWZF6pEU8GlT8a5fF32wOl1i8ftdMhssTrF/OhyGWwonTcXA=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+<script type="text/javascript">
+
+  $(document).ready(function ($) {
+    $(document).on('click', '#print', function (event) {
+      event.preventDefault();
+      var result = document.getElementById('result');
+      var format = {
+        margin: 1,
+        filename: 'Report - The PRERP',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'cm', format: 'a4', orientation: 'portrait', putOnlyUsedFonts: true }
+      };
+
+      html2pdf().set(format).from(result).save();
+    });
+  });
+
+</script>
+
+</html>

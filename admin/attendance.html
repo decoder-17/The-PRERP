@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../css/dashboard.css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet" />
+  <link rel="icon" href="..\resources\PRERP_SA.png" type="image/x-icon" />
+  <title>PRERP - View Attendance</title>
+</head>
+
+<body>
+  <div class="container">
+    <aside>
+      <div class="top">
+        <div class="logo">
+
+          <a href="../admin/dashboard.html"> <img src="../resources\PRERP_SA.png" alt="" /> </a>
+          <h1>PR<span class="title">ERP</span></h1>
+          <!-- <h2>PR<span class="title">ERP</span></h2> -->
+          <div class="close" id="close-btn">
+            <span class="material-icons-sharp"> close </span>
+          </div>
+        </div>
+        <div class="sidebar">
+          <a href="../admin/dashboard.html"><span class="material-icons-sharp"> grid_view </span>
+            <h3>Dashboard</h3>
+          </a>
+          <a href="../admin/profile.html"><span class="material-icons-sharp"> person </span>
+            <h3>Profile</h3>
+          </a>
+          <a href="../admin/addstudent.html"><span class="material-icons-sharp">
+              person_add
+            </span>
+            <h3>Add Student</h3>
+          </a>
+          <a href="../admin/addfaculty.html"><span class="material-icons-sharp">
+              person_add
+            </span>
+            <h3>Add Faculty</h3>
+          </a>
+          <a href="../admin/attendance.html" class="active"><span class="material-icons-sharp"> calendar_month </span>
+            <h3>View Attendance</h3>
+          </a>
+          <!-- <a href="../admin/updateattendance.html"><span class="material-icons-sharp">
+              today
+            </span>
+            <h3>Mark Attendance</h3>
+          </a> -->
+          <a href="../admin/assignment.html"><span class="material-icons-sharp"> assignment </span>
+            <h3>Add Assignment</h3>
+          </a>
+          <a href="../admin/gradeassignment.html"><span class="material-icons-sharp">
+              check_circle_outline
+            </span>
+            <h3>Grade Assignment</h3>
+          </a>
+          <a href="../admin/timetable.html"><span class="material-icons-sharp"> calendar_month </span>
+            <h3>Timetable</h3>
+          </a>
+
+          <a href="../admin/updatetimetable.html"><span class="material-icons-sharp">
+              update
+            </span>
+            <h3> Update Timetable</h3>
+          </a>
+          <a href="../admin/syllabus.html"><span class="material-icons-sharp">
+              summarize
+            </span>
+            <h3>Syllabus</h3>
+          </a>
+          <a href="../admin/clubactivities.html"><span class="material-icons-sharp">
+              groups
+            </span>
+            <h3>Club Activities</h3>
+          </a>
+          <a href="../admin/examtimetable.html"><span class="material-icons-sharp"> calendar_month </span>
+            <h3>Exam Timetable</h3>
+          </a>
+          <a href="../admin/result.html"><span class="material-icons-sharp">
+              check_circle
+            </span>
+            <h3>Result</h3>
+          </a>
+          <a href="../admin/feedback.html"><span class="material-icons-sharp"> forum </span>
+            <h3>Feedback</h3>
+          </a>
+          <a href="../admin/updatepassword.html"><span class="material-icons-sharp">
+              manage_accounts
+            </span>
+            <h3>Update Password</h3>
+          </a>
+
+
+
+          <a href="../index.html" onclick="return confirm('Are you sure you want to Logout?')"><span
+              class="material-icons-sharp"> logout </span>
+            <h3>Logout</h3>
+          </a>
+
+        </div>
+      </div>
+    </aside>
+
+    <main>
+      <h1> View Attendance</h1>
+
+      <div class="date">
+        <!-- <input type="date" value="2022-08-26" /> -->
+        <label for="date">26 / 08 / 2022</label>
+      </div>
+      <div class="search">
+        Enter the ID: <input type="text" class="uid" id="uid"><button class="sbtn">
+          <span class="material-icons-sharp" id="search">
+            search
+          </span>
+        </button>
+      </div>
+      <div class="insights">
+        <div class="attendance">
+          <span class="material-icons-sharp"> calendar_month </span>
+          <div class="middle">
+            <div class="left">
+              <h3>Total Attendance Percentage</h3>
+              <h1 id="totattendance"></h1>
+            </div>
+            <div class="progress">
+              <svg>
+                <!-- <circle cx="38" cy="38" r="36"></circle> -->
+              </svg>
+              <div class="number">
+                <p id="totattendance1"></p>
+              </div>
+            </div>
+          </div>
+          <small class="text-muted"></small>
+        </div>
+        <div class="csp">
+          <span class="material-icons-sharp"> analytics </span>
+          <div class="middle">
+            <div class="left">
+              <h3>Current Semester Percentage</h3>
+              <h1 id="currsemper"></h1>
+            </div>
+            <div class="progress">
+              <svg>
+                <!-- <circle cx="38" cy="38" r="36"></circle> -->
+              </svg>
+              <div class="number">
+                <p id="currsemper1"></p>
+              </div>
+            </div>
+          </div>
+          <small class="text-muted">This semester</small>
+        </div>
+        <div class="op">
+          <span class="material-icons-sharp"> assessment </span>
+          <div class="middle">
+            <div class="left">
+              <h3>Overall Percentage</h3>
+              <h1 id="overallper"></h1>
+            </div>
+            <div class="progress">
+              <svg>
+                <!-- <circle cx="38" cy="38" r="36"></circle> -->
+              </svg>
+              <div class="number">
+                <p id="overallper1"></p>
+              </div>
+            </div>
+          </div>
+          <small class="text-muted">All semesters</small>
+        </div>
+      </div>
+
+      <div class="recent-activity">
+        <h2>Attedance - VI Semester</h2>
+        <table>
+          <thread>
+            <tr>
+              <th>Month</th>
+              <th>Subject Name</th>
+              <th>Total Class Held</th>
+              <th>Total Present</th>
+              <th>Total Absent</th>
+              <th>Total Present Percentage</th>
+              <th>Total Absent Percentage</th>
+            </tr>
+          </thread>
+          <tbody>
+            <tr>
+              <td><b>April 2022 - August 2022</b></td>
+              <td id="sub1"></td>
+              <td id="totalclass1"></td>
+              <td id="totalpresent1"></td>
+              <td id="totalabsent1"></td>
+              <td id="presentpercentage1" class="success"></td>
+              <td id="absentpercentage1" class="danger"></td>
+            </tr>
+          </tbody>
+          <tbody>
+            <tr>
+              <td></td>
+              <td id="sub2"></td>
+              <td id="totalclass2"></td>
+              <td id="totalpresent2"></td>
+              <td id="totalabsent2"></td>
+              <td class="success" id="presentpercentage2"></td>
+              <td class="danger" id="absentpercentage2"></td>
+            </tr>
+          </tbody>
+          <tbody>
+            <tr>
+              <td></td>
+              <td id="sub3"></td>
+              <td id="totalclass3"></td>
+              <td id="totalpresent3"></td>
+              <td id="totalabsent3"></td>
+              <td class="success" id="presentpercentage3"></td>
+              <td class="danger" id="absentpercentage3"></td>
+            </tr>
+          </tbody>
+          <tbody>
+            <tr>
+              <td></td>
+              <td id="sub4"></td>
+              <td id="totalclass4"></td>
+              <td id="totalpresent4"></td>
+              <td id="totalabsent4"></td>
+              <td class="success" id="presentpercentage4"></td>
+              <td class="danger" id="absentpercentage4"></td>
+            </tr>
+          </tbody>
+          <tbody>
+            <tr>
+              <td></td>
+              <td id="sub5"></td>
+              <td id="totalclass5"></td>
+              <td id="totalpresent5"></td>
+              <td id="totalabsent5"></td>
+              <td class="success" id="presentpercentage5"></td>
+              <td class="danger" id="absentpercentage5"></td>
+            </tr>
+          </tbody>
+          <tbody>
+            <tr>
+              <td></td>
+              <td id="sub6"></td>
+              <td id="totalclass6"></td>
+              <td id="totalpresent6"></td>
+              <td id="totalabsent6"></td>
+              <td class="success" id="presentpercentage6"></td>
+              <td class="danger" id="absentpercentage6"></td>
+            </tr>
+          </tbody>
+          <tbody>
+            <tr>
+              <td></td>
+              <td id="sub7"></td>
+              <td id="totalclass7"></td>
+              <td id="totalpresent7"></td>
+              <td id="totalabsent7"></td>
+              <td class="success" id="presentpercentage7"></td>
+              <td class="danger" id="absentpercentage7"></td>
+            </tr>
+          </tbody>
+          <tbody>
+            <tr>
+              <td></td>
+              <td><b>Total</b></td>
+              <td id="totalclasses"></td>
+              <td id="totalpresent_final"></td>
+              <td id="totalabsent_final"></td>
+              <td class="success" id="totalpresentpercentage"></td>
+              <td class="danger" id="totalabsentpercentage"></td>
+            </tr>
+          </tbody>
+        </table>
+        <br>
+
+      </div>
+    </main>
+
+    <div class="right">
+      <div class="top">
+        <button id="menu-btn">
+          <span class="material-icons-sharp"> menu </span>
+        </button>
+        <div class="theme-toggler" id="theme">
+          <span class="material-icons-sharp active"> light_mode </span>
+          <span class="material-icons-sharp"> dark_mode </span>
+        </div>
+        <div class="profile">
+          <div class="info">
+            <p>Hey, <b id="user"></b></p>
+            <small class="text-muted">Admin Executive</small>
+          </div>
+
+          <a href="../admin/profile.html">
+            <div class="profile-photo">
+              <img src="..\resources\download.webp" alt="avatar" />
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="recent-updates">
+        <h2>Recent Updates</h2>
+        <div class="updates">
+          <div class="update">
+            <div class="profile-photo">
+              <img src="..\resources\848351_cup_512x512.png" alt="avatar" />
+            </div>
+            <div class="message">
+              <p><b>XACTITUDE 2022</b> at Kristu Jayanti College.</p>
+              <small class="text-muted">Team TECHNOZIA won the overalls.</small>
+            </div>
+          </div>
+          <div class="update">
+            <div class="profile-photo">
+              <img src="..\resources\848351_cup_512x512.png" alt="avatar" />
+            </div>
+            <div class="message">
+              <p><b># 2022</b> at Charan's Degree College..</p>
+              <small class="text-muted">Team TECHNOZIA won the overalls.</small>
+            </div>
+          </div>
+          <div class="update">
+            <div class="profile-photo">
+              <img src="..\resources\848351_cup_512x512.png" alt="avatar" />
+            </div>
+            <div class="message">
+              <p><b>SYNTAXIA 2022</b> at St. Joseph's College.</p>
+              <small class="text-muted">Team TECHNOZIA won the overalls.</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="upcoming-events">
+        <h2>Upcoming Events</h2>
+        <div class="update">
+          <div class="icon">
+            <span class="material-icons-sharp"> event </span>
+          </div>
+          <div class="right">
+            <div class="info">
+              <h3>Prefinals</h3>
+              <small class="text-muted">From 2nd August, 2022.</small>
+            </div>
+            <h5 class="success">Lab Prefinals.</h5>
+            <h3>
+              Attendance is mandatory.
+            </h3>
+          </div>
+        </div>
+        <div class="update">
+          <div class="icon">
+            <span class="material-icons-sharp"> event </span>
+          </div>
+          <div class="right">
+            <div class="info">
+              <h3>Fees Payment Reminder</h3>
+              <small class="text-muted">By 20th Augus, 2022.</small>
+            </div>
+            <h5 class="danger">
+              Students with outstanding payment won't be given their hallticket.
+
+            </h5>
+            <h3>
+              Everyone should pay their fees within the date.
+            </h3>
+          </div>
+        </div>
+        <div class="update">
+          <div class="icon">
+            <span class="material-icons-sharp"> event </span>
+          </div>
+          <div class="right">
+            <div class="info">
+              <h3>Practical Finals</h3>
+              <small class="text-muted">From 24th August, 2022.</small>
+            </div>
+            <h5 class="success">
+              All the best to appearing students.
+            </h5>
+            <h3>
+              Everyone is requested to be in uniform and carry their hallticket and ID card.
+            </h3>
+          </div>
+        </div>
+
+        <!-- <div class="addupdate">
+          <div class="icon">
+            <span class="material-icons-sharp">
+              add
+            </span>
+          </div>
+          <div class="adupd">
+            <div class="info">
+              <h3>Add Update</h3>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </div>
+    <script src="../js/index.js"></script>
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.1/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.9.1/firebase-analytics.js";
+
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyBaBKqVSNg1X9YhByu-Eq-jsll5Rr3ZSBo",
+        authDomain: "theprerp.firebaseapp.com",
+        projectId: "theprerp",
+        storageBucket: "theprerp.appspot.com",
+        messagingSenderId: "965186345528",
+        appId: "1:965186345528:web:00d25bf1b43ad61d86e4cd",
+        measurementId: "G-VQKKY7Q88B",
+      };
+
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+      import {
+        getDatabase,
+        ref,
+        get,
+        set,
+        child,
+        update,
+        remove,
+      } from "https://www.gstatic.com/firebasejs/9.9.1/firebase-database.js";
+      const db = getDatabase();
+      let userid = document.getElementById('user');
+      let logout = document.getElementById('logout');
+      var currentuser = null;
+
+      const uid = document.getElementById('uid')
+
+      const sub1 = document.getElementById('sub1')
+      const totalclass1 = document.getElementById('totalclass1')
+      const totalpresent1 = document.getElementById('totalpresent1')
+      const totalabsent1 = document.getElementById('totalabsent1')
+      const presentpercentage1 = document.getElementById('presentpercentage1')
+      const absentpercentage1 = document.getElementById('absentpercentage1')
+
+      const sub2 = document.getElementById('sub2')
+      const totalclass2 = document.getElementById('totalclass2')
+      const totalpresent2 = document.getElementById('totalpresent2')
+      const totalabsent2 = document.getElementById('totalabsent2')
+      const presentpercentage2 = document.getElementById('presentpercentage2')
+      const absentpercentage2 = document.getElementById('absentpercentage2')
+
+      const sub3 = document.getElementById('sub3')
+      const totalclass3 = document.getElementById('totalclass3')
+      const totalpresent3 = document.getElementById('totalpresent3')
+      const totalabsent3 = document.getElementById('totalabsent3')
+      const presentpercentage3 = document.getElementById('presentpercentage3')
+      const absentpercentage3 = document.getElementById('absentpercentage3')
+
+      const sub4 = document.getElementById('sub4')
+      const totalclass4 = document.getElementById('totalclass4')
+      const totalpresent4 = document.getElementById('totalpresent4')
+      const totalabsent4 = document.getElementById('totalabsent4')
+      const presentpercentage4 = document.getElementById('presentpercentage4')
+      const absentpercentage4 = document.getElementById('absentpercentage4')
+
+      const sub5 = document.getElementById('sub5')
+      const totalclass5 = document.getElementById('totalclass5')
+      const totalpresent5 = document.getElementById('totalpresent5')
+      const totalabsent5 = document.getElementById('totalabsent5')
+      const presentpercentage5 = document.getElementById('presentpercentage5')
+      const absentpercentage5 = document.getElementById('absentpercentage5')
+
+      const sub6 = document.getElementById('sub6')
+      const totalclass6 = document.getElementById('totalclass6')
+      const totalpresent6 = document.getElementById('totalpresent6')
+      const totalabsent6 = document.getElementById('totalabsent6')
+      const presentpercentage6 = document.getElementById('presentpercentage6')
+      const absentpercentage6 = document.getElementById('absentpercentage6')
+
+      const sub7 = document.getElementById('sub7')
+      const totalclass7 = document.getElementById('totalclass7')
+      const totalpresent7 = document.getElementById('totalpresent7')
+      const totalabsent7 = document.getElementById('totalabsent7')
+      const presentpercentage7 = document.getElementById('presentpercentage7')
+      const absentpercentage7 = document.getElementById('absentpercentage7')
+
+
+      const search = document.getElementById('search')
+
+      function username() {
+        let keepLoggedIn = localStorage.getItem("keepLoggedIn");
+
+        if (keepLoggedIn == "yes")
+          currentuser = JSON.parse(localStorage.getItem('user'));
+        else
+          currentuser = JSON.parse(sessionStorage.getItem('user'));
+      }
+
+      function signout() {
+        sessionStorage.removeItem('user');
+        localStorage.removeItem('user');
+        localStorage.removeItem('keepLoggedIn');
+        window.location = "index.html";
+      }
+
+      window.onload = function () {
+        username();
+        if (currentuser != null) {
+          user.innerText = currentuser.name;
+        }
+      }
+
+      function viewAttendance() {
+        const dbref = ref(db);
+
+        if (uid.value == "")
+          alert("Please enter the username and try again.")
+        else {
+          get(child(dbref, "StudentList/" + uid.value)).then((snapshot) => {
+            if (snapshot.exists() && snapshot.val().sub1 != null) {
+              sub1.innerText = snapshot.val().sub1;
+              totalclass1.innerText = snapshot.val().sub1tot;
+              totalpresent1.innerText = snapshot.val().sub1present;
+              totalabsent1.innerText = totalclass1.innerHTML - totalpresent1.innerHTML;
+              presentpercentage1.innerText = ((totalpresent1.innerText / totalclass1.innerText) * 100).toFixed(2);
+              absentpercentage1.innerText = ((totalabsent1.innerText / totalclass1.innerText) * 100).toFixed(2);
+
+              sub2.innerText = snapshot.val().sub2;
+              totalclass2.innerText = snapshot.val().sub2tot;
+              totalpresent2.innerText = snapshot.val().sub2present;
+              totalabsent2.innerText = totalclass2.innerHTML - totalpresent2.innerHTML;
+              presentpercentage2.innerText = ((totalpresent2.innerText / totalclass2.innerText) * 100).toFixed(2);
+              absentpercentage2.innerText = ((totalabsent2.innerText / totalclass2.innerText) * 100).toFixed(2);
+
+              sub3.innerText = snapshot.val().sub3;
+              totalclass3.innerText = snapshot.val().sub3tot;
+              totalpresent3.innerText = snapshot.val().sub3present;
+              totalabsent3.innerText = totalclass3.innerHTML - totalpresent3.innerHTML;
+              presentpercentage3.innerText = ((totalpresent3.innerText / totalclass3.innerText) * 100).toFixed(2);
+              absentpercentage3.innerText = ((totalabsent3.innerText / totalclass3.innerText) * 100).toFixed(2);
+
+              sub4.innerText = snapshot.val().sub4;
+              totalclass4.innerText = snapshot.val().sub4tot;
+              totalpresent4.innerText = snapshot.val().sub4present;
+              totalabsent4.innerText = totalclass4.innerHTML - totalpresent4.innerHTML;
+              presentpercentage4.innerText = ((totalpresent4.innerText / totalclass4.innerText) * 100).toFixed(2);
+              absentpercentage4.innerText = ((totalabsent4.innerText / totalclass4.innerText) * 100).toFixed(2);
+
+              sub5.innerText = snapshot.val().sub5;
+              totalclass5.innerText = snapshot.val().sub5tot;
+              totalpresent5.innerText = snapshot.val().sub5present;
+              totalabsent5.innerText = totalclass5.innerHTML - totalpresent5.innerHTML;
+              presentpercentage5.innerText = ((totalpresent5.innerText / totalclass5.innerText) * 100).toFixed(2);
+              absentpercentage5.innerText = ((totalabsent5.innerText / totalclass5.innerText) * 100).toFixed(2);
+
+              sub6.innerText = snapshot.val().sub6;
+              totalclass6.innerText = snapshot.val().sub6tot;
+              totalpresent6.innerText = snapshot.val().sub6present;
+              totalabsent6.innerText = totalclass6.innerHTML - totalpresent6.innerHTML;
+              presentpercentage6.innerText = ((totalpresent6.innerText / totalclass6.innerText) * 100).toFixed(2);
+              absentpercentage6.innerText = ((totalabsent6.innerText / totalclass6.innerText) * 100).toFixed(2);
+
+              sub7.innerText = snapshot.val().sub7;
+              totalclass7.innerText = snapshot.val().sub7tot;
+              totalpresent7.innerText = snapshot.val().sub7present;
+
+              totalabsent7.innerText = totalclass7.innerHTML - totalpresent7.innerHTML;
+              presentpercentage7.innerText = ((totalpresent7.innerText / totalclass7.innerText) * 100).toFixed(2);
+              absentpercentage7.innerText = ((totalabsent7.innerText / totalclass7.innerText) * 100).toFixed(2);
+
+              totalclasses.innerText = Number(totalclass1.innerText) + Number(totalclass2.innerText) + Number(totalclass3.innerText) + Number(totalclass4.innerText) + Number(totalclass5.innerText) + Number(totalclass6.innerText) + Number(totalclass7.innerText);
+
+              totalpresent_final.innerText = Number(totalpresent1.innerText) + Number(totalpresent2.innerText) + Number(totalpresent3.innerText) + Number(totalpresent4.innerText) + Number(totalpresent5.innerText) + Number(totalpresent6.innerText) + Number(totalpresent7.innerText);
+
+              totalabsent_final.innerText = totalclasses.innerText - totalpresent_final.innerText;
+
+              totalpresentpercentage.innerText = ((totalpresent_final.innerText / totalclasses.innerText) * 100).toFixed(2);
+              totalabsentpercentage.innerText = ((totalabsent_final.innerText / totalclasses.innerText) * 100).toFixed(2);
+
+              totattendance.innerHTML = totalpresentpercentage.innerHTML + "%";
+
+              var midterm = ((Number(snapshot.val().securedmarks1) + Number(snapshot.val().securedmarks2) + Number(snapshot.val().securedmarks3) + Number(snapshot.val().securedmarks4) + Number(snapshot.val().securedmarks5)) / (Number(snapshot.val().totalmarks1) + Number(snapshot.val().totalmarks2) + Number(snapshot.val().totalmarks3) + Number(snapshot.val().totalmarks4) + Number(snapshot.val().totalmarks5)) * 100).toFixed(2);
+
+              if (currentuser.psecuredmarks1 != null) {
+                var prefinals = ((Number(currentuser.psecuredmarks1) + Number(currentuser.psecuredmarks2) + Number(currentuser.psecuredmarks3) + Number(currentuser.psecuredmarks4) + Number(currentuser.psecuredmarks5)) / (Number(currentuser.ptotalmarks1) + Number(currentuser.ptotalmarks2) + Number(currentuser.ptotalmarks3) + Number(currentuser.ptotalmarks4) + Number(currentuser.ptotalmarks5)) * 100).toFixed(2);
+                currsemper.innerText = ((Number(midterm) + Number(prefinals)) / 2).toFixed(2) + "%";
+                overallper.innerText = ((Number(midterm) + Number(prefinals)) / 2).toFixed(2) + "%";
+              }
+              else {
+                currsemper.innerText = (Number(midterm)).toFixed(2) + "%";
+                overallper.innerText = (Number(midterm)).toFixed(2) + "%";
+              }
+            }
+            else {
+              alert("No attendance found.\nPlease check the username.\nPlease mark attendance first if not marked before.")
+            }
+          })
+            .catch((error) => {
+              alert("Fetching attendance was unsuccessful., error" + error);
+            });
+        }
+
+
+      }
+
+      search.addEventListener('click', viewAttendance)
+
+    </script>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"
+  integrity="sha512-E8QSvWZ0eCLGk4km3hxSsNmGWbLtSCSUcewDQPQWZF6pEU8GlT8a5fF32wOl1i8ftdMhssTrF/OhyGWwonTcXA=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</html>

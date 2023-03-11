@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../css/dashboard.css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet" />
+  <link rel="icon" href="resources\PRERP_SA.png" type="image/x-icon" />
+  <title>PRERP - Add Assignment</title>
+</head>
+
+<body>
+  <div class="container">
+    <aside>
+      <div class="top">
+        <div class="logo">
+          <a href="../admin/dashboard.html"> <img src="../resources\PRERP_SA.png" alt="" /> </a>
+          <h1>PR<span class="title">ERP</span></h1>
+          <div class="close" id="close-btn">
+            <span class="material-icons-sharp"> close </span>
+          </div>
+        </div>
+        <div class="sidebar">
+          <a href="../admin/dashboard.html"><span class="material-icons-sharp"> grid_view </span>
+            <h3>Dashboard</h3>
+          </a>
+          <a href="../admin/profile.html"><span class="material-icons-sharp"> person </span>
+            <h3>Profile</h3>
+          </a>
+          <a href="../admin/addstudent.html"><span class="material-icons-sharp">
+              person_add
+            </span>
+            <h3>Add Student</h3>
+          </a>
+          <a href="../admin/addfaculty.html"><span class="material-icons-sharp">
+              person_add
+            </span>
+            <h3>Add Faculty</h3>
+          </a>
+          <a href="../admin/attendance.html"><span class="material-icons-sharp"> calendar_month </span>
+            <h3>View Attendance</h3>
+          </a>
+          <!-- <a href="../admin/updateattendance.html"><span class="material-icons-sharp">
+              today
+            </span>
+            <h3>Update Attendance</h3>
+          </a> -->
+          <a href="../admin/assignment.html" class="active"><span class="material-icons-sharp"> assignment </span>
+            <h3>Add Assignment</h3>
+          </a>
+          <a href="../admin/gradeassignment.html"><span class="material-icons-sharp">
+              check_circle_outline
+            </span>
+            <h3>Grade Assignment</h3>
+          </a>
+          <a href="../admin/timetable.html"><span class="material-icons-sharp"> calendar_month </span>
+            <h3>Timetable</h3>
+          </a>
+
+          <a href="../admin/updatetimetable.html"><span class="material-icons-sharp">
+              update
+            </span>
+            <h3> Update Timetable</h3>
+          </a>
+          <a href="../admin/syllabus.html"><span class="material-icons-sharp">
+              summarize
+            </span>
+            <h3>Syllabus</h3>
+          </a>
+          <a href="../admin/clubactivities.html"><span class="material-icons-sharp">
+              groups
+            </span>
+            <h3>Club Activities</h3>
+          </a>
+          <a href="../admin/examtimetable.html"><span class="material-icons-sharp"> calendar_month </span>
+            <h3>Exam Timetable</h3>
+          </a>
+          <a href="../admin/result.html"><span class="material-icons-sharp">
+              check_circle
+            </span>
+            <h3>Result</h3>
+          </a>
+          <a href="../admin/feedback.html"><span class="material-icons-sharp"> forum </span>
+            <h3>Feedback</h3>
+          </a>
+          <a href="../admin/updatepassword.html"><span class="material-icons-sharp">
+              manage_accounts
+            </span>
+            <h3>Update Password</h3>
+          </a>
+
+
+          <a href="../index.html" onclick="return confirm('Are you sure you want to Logout?')"><span
+              class="material-icons-sharp"> logout </span>
+            <h3>Logout</h3>
+          </a>
+
+        </div>
+      </div>
+    </aside>
+
+    <main>
+      <h1>Assignment</h1>
+
+      <div class="date">
+        <!-- <input type="date" value="2022-08-26" /> -->
+        <label for="date">26 / 08 / 2022</label>
+      </div>
+      <div class="search">
+        Enter the ID: <input type="text" class="uid" id="uid"><button class="sbtn">
+          <!-- <span class="material-icons-sharp" id="search">
+            search
+          </span> -->
+        </button>
+      </div>
+      <div class="recent-activity">
+        <h2>Assignment - I</h2>
+        <table>
+          <thread>
+            <tr>
+              <th>Sl. No.</th>
+              <th>Subject</th>
+              <th>Topic</th>
+              <th>Assigned Date</th>
+              <th>Submission Date</th>
+              <th>Marks Alloted</th>
+            </tr>
+          </thread>
+          <tbody>
+            <tr>
+              <td>1.</td>
+              <td><input type="text" id="sub1"></td>
+              <td><input type="text" id="topic1"></td>
+              <td><input type="date" id="assigneddate1"></td>
+              <td><input type="date" id="submissiondate1"></td>
+              <td><input type="number" id="marksalloted1" min="0" max="10"></td>
+            </tr>
+          </tbody>
+          <tbody>
+            <tr>
+              <td>2.</td>
+              <td><input type="text" id="sub2"></td>
+              <td><input type="text" id="topic2"></td>
+              <td><input type="date" id="assigneddate2"></td>
+              <td><input type="date" id="submissiondate2"></td>
+              <td><input type="number" id="marksalloted2" min="0" max="10"></td>
+            </tr>
+          </tbody>
+          <tbody>
+            <tr>
+              <td>3.</td>
+              <td><input type="text" id="sub3"></td>
+              <td><input type="text" id="topic3"></td>
+              <td><input type="date" id="assigneddate3"></td>
+              <td><input type="date" id="submissiondate3"></td>
+              <td><input type="number" id="marksalloted3" min="0" max="10"></td>
+            </tr>
+          </tbody>
+          <tbody>
+            <tr>
+              <td>4.</td>
+              <td><input type="text" id="sub4"></td>
+              <td><input type="text" id="topic4"></td>
+              <td><input type="date" id="assigneddate4"></td>
+              <td><input type="date" id="submissiondate4"></td>
+              <td><input type="number" id="marksalloted4" min="0" max="10"></td>
+            </tr>
+          </tbody>
+          <tbody>
+            <tr>
+              <td>5.</td>
+              <td><input type="text" id="sub5"></td>
+              <td><input type="text" id="topic5"></td>
+              <td><input type="date" id="assigneddate5"></td>
+              <td><input type="date" id="submissiondate5"></td>
+              <td><input type="number" id="marksalloted5" min="0" max="10"></td>
+            </tr>
+          </tbody>
+        </table>
+        <br>
+        <center><input type="button" class="submit" id="submit" value="Submit"></center>
+        <!-- <a href="#">Show all</a> -->
+      </div>
+      <div class="recent-activity">
+        <!-- <h2>Assignment - II</h2>
+        <table>
+          <thread>
+            <tr>
+              <th>Sl. No.</th>
+              <th>Subject</th>
+              <th>Topic</th>
+              <th>Assigned Date</th>
+              <th>Submission Date</th>
+              <th>Marks Allotted</th>
+              <th>Submission Status</th>
+              <th>Marks Secured</th>
+              <th>Remarks</th>
+            </tr>
+          </thread>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Machine Learning</td>
+              <td>Classification and Prediction</td>
+              <td>12/06/2022</td>
+              <td>22/06/2022</td>
+              <td>10</td>
+              <td class="success">Submitted</td>
+              <td>10</td>
+              <td class="success">Good</td>
+            </tr>
+          </tbody>
+          <tbody>
+            <tr>
+              <td>2</td>
+              <td>System Programming</td>
+              <td>Compilers</td>
+              <td>15/06/2022</td>
+              <td>28/06/2022</td>
+              <td>10</td>
+              <td class="success">Submitted</td>
+              <td>10</td>
+              <td class="success">Good</td>
+            </tr>
+          </tbody>
+          <tbody>
+            <tr>
+              <td>3</td>
+              <td>Web Programming</td>
+              <td>Javascript</td>
+              <td>12/06/2022</td>
+              <td>22/06/2022</td>
+              <td>10</td>
+              <td class="success">Submitted</td>
+              <td>10</td>
+              <td class="success">Good</td>
+            </tr>
+          </tbody>
+          <tbody>
+            <tr>
+              <td>4</td>
+              <td>Entrepreneurship and Innovation</td>
+              <td>Types of thinking</td>
+              <td>06/06/2022</td>
+              <td>06/07/2022</td>
+              <td>10</td>
+              <td class="success">Submitted</td>
+              <td>10</td>
+              <td class="success">Good</td>
+            </tr>
+          </tbody>
+        </table> -->
+        <!-- <a href="#">Show all</a> -->
+      </div>
+    </main>
+
+    <div class="right">
+      <div class="top">
+        <button id="menu-btn">
+          <span class="material-icons-sharp"> menu </span>
+        </button>
+        <div class="theme-toggler" id="theme">
+          <span class="material-icons-sharp active"> light_mode </span>
+          <span class="material-icons-sharp"> dark_mode </span>
+        </div>
+        <div class="profile">
+          <div class="info">
+            <p>Hey, <b id="user"></b></p>
+            <small class="text-muted">Admin Executive</small>
+          </div>
+
+          <a href="../admin/profile.html">
+            <div class="profile-photo">
+              <img src="..\resources\download.webp" alt="avatar" />
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="recent-updates">
+        <h2>Recent Updates</h2>
+        <div class="updates">
+          <div class="update">
+            <div class="profile-photo">
+              <img src="..\resources\848351_cup_512x512.png" alt="avatar" />
+            </div>
+            <div class="message">
+              <p><b>XACTITUDE 2022</b> at Kristu Jayanti College.</p>
+              <small class="text-muted">Team TECHNOZIA won the overalls.</small>
+            </div>
+          </div>
+          <div class="update">
+            <div class="profile-photo">
+              <img src="..\resources\848351_cup_512x512.png" alt="avatar" />
+            </div>
+            <div class="message">
+              <p><b># 2022</b> at Charan's Degree College..</p>
+              <small class="text-muted">Team TECHNOZIA won the overalls.</small>
+            </div>
+          </div>
+          <div class="update">
+            <div class="profile-photo">
+              <img src="..\resources\848351_cup_512x512.png" alt="avatar" />
+            </div>
+            <div class="message">
+              <p><b>SYNTAXIA 2022</b> at St. Joseph's College.</p>
+              <small class="text-muted">Team TECHNOZIA won the overalls.</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="upcoming-events">
+        <h2>Upcoming Events</h2>
+        <div class="update">
+          <div class="icon">
+            <span class="material-icons-sharp"> event </span>
+          </div>
+          <div class="right">
+            <div class="info">
+              <h3>Prefinals</h3>
+              <small class="text-muted">From 2nd August, 2022.</small>
+            </div>
+            <h5 class="success">Lab Prefinals.</h5>
+            <h3>
+              Attendance is mandatory.
+            </h3>
+          </div>
+        </div>
+        <div class="update">
+          <div class="icon">
+            <span class="material-icons-sharp"> event </span>
+          </div>
+          <div class="right">
+            <div class="info">
+              <h3>Fees Payment Reminder</h3>
+              <small class="text-muted">By 20th Augus, 2022.</small>
+            </div>
+            <h5 class="danger">
+              Students with outstanding payment won't be given their hallticket.
+
+            </h5>
+            <h3>
+              Everyone should pay their fees within the date.
+            </h3>
+          </div>
+        </div>
+        <div class="update">
+          <div class="icon">
+            <span class="material-icons-sharp"> event </span>
+          </div>
+          <div class="right">
+            <div class="info">
+              <h3>Practical Finals</h3>
+              <small class="text-muted">From 24th August, 2022.</small>
+            </div>
+            <h5 class="success">
+              All the best to appearing students.
+            </h5>
+            <h3>
+              Everyone is requested to be in uniform and carry their hallticket and ID card.
+            </h3>
+          </div>
+        </div>
+
+        <!-- <div class="addupdate">
+          <div class="icon">
+            <span class="material-icons-sharp">
+              add
+            </span>
+          </div>
+          <div class="adupd">
+            <div class="info">
+              <h3>Add Update</h3>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </div>
+    <script src="../js/index.js"></script>
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.1/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.9.1/firebase-analytics.js";
+
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyBaBKqVSNg1X9YhByu-Eq-jsll5Rr3ZSBo",
+        authDomain: "theprerp.firebaseapp.com",
+        projectId: "theprerp",
+        storageBucket: "theprerp.appspot.com",
+        messagingSenderId: "965186345528",
+        appId: "1:965186345528:web:00d25bf1b43ad61d86e4cd",
+        measurementId: "G-VQKKY7Q88B",
+      };
+
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+      import {
+        getDatabase,
+        ref,
+        get,
+        set,
+        child,
+        update,
+        remove,
+      } from "https://www.gstatic.com/firebasejs/9.9.1/firebase-database.js";
+      const db = getDatabase();
+
+      let userid = document.getElementById('user');
+      let logout = document.getElementById('logout');
+      var currentuser = null;
+      const uid = document.getElementById('uid')
+      const subject1 = document.getElementById('sub1')
+      const topic1 = document.getElementById('topic1')
+      const assigneddate1 = document.getElementById('assigneddate1')
+      const submissiondate1 = document.getElementById('submissiondate1')
+      const marksalloted1 = document.getElementById('marksalloted1')
+
+      const subject2 = document.getElementById('sub2')
+      const topic2 = document.getElementById('topic2')
+      const assigneddate2 = document.getElementById('assigneddate2')
+      const submissiondate2 = document.getElementById('submissiondate2')
+      const marksalloted2 = document.getElementById('marksalloted2')
+
+      const subject3 = document.getElementById('sub3')
+      const topic3 = document.getElementById('topic3')
+      const assigneddate3 = document.getElementById('assigneddate3')
+      const submissiondate3 = document.getElementById('submissiondate3')
+      const marksalloted3 = document.getElementById('marksalloted3')
+
+      const subject4 = document.getElementById('sub4')
+      const topic4 = document.getElementById('topic4')
+      const assigneddate4 = document.getElementById('assigneddate4')
+      const submissiondate4 = document.getElementById('submissiondate4')
+      const marksalloted4 = document.getElementById('marksalloted4')
+
+      const subject5 = document.getElementById('sub5')
+      const topic5 = document.getElementById('topic5')
+      const assigneddate5 = document.getElementById('assigneddate5')
+      const submissiondate5 = document.getElementById('submissiondate5')
+      const marksalloted5 = document.getElementById('marksalloted5')
+      const btn = document.getElementById('submit')
+      const search = document.getElementById('search')
+
+
+      function username() {
+        let keepLoggedIn = localStorage.getItem("keepLoggedIn");
+
+        if (keepLoggedIn == "yes")
+          currentuser = JSON.parse(localStorage.getItem('user'));
+        else
+          currentuser = JSON.parse(sessionStorage.getItem('user'));
+      }
+
+      function signout() {
+        sessionStorage.removeItem('user');
+        localStorage.removeItem('user');
+        localStorage.removeItem('keepLoggedIn');
+        window.location = "index.html";
+      }
+
+      window.onload = function () {
+        username();
+        if (currentuser != null) {
+          user.innerText = currentuser.name;
+        }
+      }
+
+      function addAssignment() {
+        const dbref = ref(db);
+        if (uid.value != "" && subject1.value != "" && topic1.value != "" && assigneddate1.value != "" && submissiondate1.value != "" && marksalloted1.value != ""
+          && subject2.value != "" && topic2.value != "" && assigneddate2.value != "" && submissiondate2.value != "" && marksalloted2.value != ""
+          && subject3.value != "" && topic3.value != "" && assigneddate3.value != "" && submissiondate3.value != "" && marksalloted3.value != ""
+          && subject4.value != "" && topic4.value != "" && assigneddate4.value != "" && submissiondate4.value != "" && marksalloted4.value != ""
+          && subject5.value != "" && topic5.value != "" && assigneddate5.value != "" && submissiondate5.value != "" && marksalloted5.value != "") {
+          get(child(dbref, "StudentList/" + uid.value)).then((snapshot) => {
+            if (snapshot.exists()) {
+              update(ref(db, "StudentList/" + uid.value),
+                {
+                  username: uid.value,
+                  asgn_sub1: subject1.value,
+                  topic1: topic1.value,
+                  assigneddate1: assigneddate1.value,
+                  submissiondate1: submissiondate1.value,
+                  marksalloted1: marksalloted1.value,
+
+                  asgn_sub2: subject2.value,
+                  topic2: topic2.value,
+                  assigneddate2: assigneddate2.value,
+                  submissiondate2: submissiondate2.value,
+                  marksalloted2: marksalloted2.value,
+
+                  asgn_sub3: subject3.value,
+                  topic3: topic3.value,
+                  assigneddate3: assigneddate3.value,
+                  submissiondate3: submissiondate3.value,
+                  marksalloted3: marksalloted3.value,
+
+                  asgn_sub4: subject4.value,
+                  topic4: topic4.value,
+                  assigneddate4: assigneddate4.value,
+                  submissiondate4: submissiondate4.value,
+                  marksalloted4: marksalloted4.value,
+
+                  asgn_sub5: subject5.value,
+                  topic5: topic5.value,
+                  assigneddate5: assigneddate5.value,
+                  submissiondate5: submissiondate5.value,
+                  marksalloted5: marksalloted5.value
+                })
+                .then(() => {
+                  alert("Assignment has been added successfully.");
+                  uid.value = ''
+                  sub1.value = ''
+                  topic1.value = ''
+                  assigneddate1.value = ''
+                  submissiondate1.value = ''
+                  marksalloted1.value = ''
+
+                  sub2.value = ''
+                  topic2.value = ''
+                  assigneddate2.value = ''
+                  submissiondate2.value = ''
+                  marksalloted2.value = ''
+
+                  sub3.value = ''
+                  topic3.value = ''
+                  assigneddate3.value = ''
+                  submissiondate3.value = ''
+                  marksalloted3.value = ''
+
+                  sub4.value = ''
+                  topic4.value = ''
+                  assigneddate4.value = ''
+                  submissiondate4.value = ''
+                  marksalloted4.value = ''
+
+                  sub5.value = ''
+                  topic5.value = ''
+                  assigneddate5.value = ''
+                  submissiondate5.value = ''
+                  marksalloted5.value = ''
+                })
+                .catch((error) => {
+                  alert("error" + error);
+                })
+            }
+            else {
+              alert("Please check the entered username and try again.");
+            }
+          });
+        }
+        else {
+          alert("Please fill all the fields.")
+        }
+      }
+
+      btn.addEventListener('click', addAssignment);
+
+    </script>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"
+  integrity="sha512-E8QSvWZ0eCLGk4km3hxSsNmGWbLtSCSUcewDQPQWZF6pEU8GlT8a5fF32wOl1i8ftdMhssTrF/OhyGWwonTcXA=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</html>

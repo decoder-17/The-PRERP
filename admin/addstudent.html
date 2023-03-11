@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../css/dashboard.css" />
+  <link rel="stylesheet" href="../css/profile.css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet" />
+  <link rel="icon" href="..\resources\PRERP_SA.png" type="image/x-icon" />
+  <title>PRERP - Add Student</title>
+</head>
+
+<body>
+  <div class="container">
+    <aside>
+      <div class="top">
+        <div class="logo">
+          <a href="../admin/dashboard.html"> <img src="../resources\PRERP_SA.png" alt="" /> </a>
+          <h1>PR<span class="title">ERP</span></h1>
+
+          <div class="close" id="close-btn">
+            <span class="material-icons-sharp"> close </span>
+          </div>
+        </div>
+        <div class="sidebar">
+          <a href="../admin/dashboard.html"><span class="material-icons-sharp"> grid_view </span>
+            <h3>Dashboard</h3>
+          </a>
+          <a href="../admin/profile.html"><span class="material-icons-sharp"> person </span>
+            <h3>Profile</h3>
+          </a>
+          <a href="../admin/addstudent.html" class="active"><span class="material-icons-sharp">
+              person_add
+            </span>
+            <h3>Add Student</h3>
+          </a>
+          <a href="../admin/addfaculty.html"><span class="material-icons-sharp">
+              person_add
+            </span>
+            <h3>Add Faculty</h3>
+          </a>
+          <a href="../admin/attendance.html"><span class="material-icons-sharp"> calendar_month </span>
+            <h3>View Attendance</h3>
+          </a>
+          <!-- <a href="../admin/updateattendance.html"><span class="material-icons-sharp">
+              today
+            </span>
+            <h3>Mark Attendance</h3>
+          </a> -->
+          <a href="../admin/assignment.html"><span class="material-icons-sharp"> assignment </span>
+            <h3>Add Assignment</h3>
+          </a>
+          <a href="../admin/gradeassignment.html"><span class="material-icons-sharp">
+              check_circle_outline
+            </span>
+            <h3>Grade Assignment</h3>
+          </a>
+          <a href="../admin/timetable.html"><span class="material-icons-sharp"> calendar_month </span>
+            <h3>Timetable</h3>
+          </a>
+
+          <a href="../admin/updatetimetable.html"><span class="material-icons-sharp">
+              update
+            </span>
+            <h3> Update Timetable</h3>
+          </a>
+          <a href="../admin/syllabus.html"><span class="material-icons-sharp">
+              summarize
+            </span>
+            <h3>Syllabus</h3>
+          </a>
+          <a href="../admin/clubactivities.html"><span class="material-icons-sharp">
+              groups
+            </span>
+            <h3>Club Activities</h3>
+          </a>
+          <a href="../admin/examtimetable.html"><span class="material-icons-sharp"> calendar_month </span>
+            <h3>Exam Timetable</h3>
+          </a>
+          <a href="../admin/result.html"><span class="material-icons-sharp">
+              check_circle
+            </span>
+            <h3>Result</h3>
+          </a>
+          <a href="../admin/feedback.html"><span class="material-icons-sharp"> forum </span>
+            <h3>Feedback</h3>
+          </a>
+          <a href="../admin/updatepassword.html"><span class="material-icons-sharp">
+              manage_accounts
+            </span>
+            <h3>Update Password</h3>
+          </a>
+
+
+
+          <a href="../index.html" onclick="return confirm('Are you sure you want to Logout?')"><span
+              class="material-icons-sharp"> logout </span>
+            <h3>Logout</h3>
+          </a>
+        </div>
+      </div>
+    </aside>
+
+    <main>
+      <h1>Add Student</h1>
+      <div class="date">
+        <!-- <input type="date" value="2022-08-26" /> -->
+        <label for="date">26 / 08 / 2022</label>
+      </div>
+      <br> <br>
+      <div class="details">
+        <h2>Enter the details of the student</h2>
+        <div class="user-details">
+          <div class="deets">
+            <div class="name d">Name:</div>
+            <div class="uname"><input type="text" id="name" class="name" required></div>
+          </div>
+          <div class="deets">
+            <div class="rno d">Register Number: </div>
+            <div class="rnod"><input type="text" id="registerno" class="registerno" required></div>
+          </div>
+          <div class="deets">
+            <div class="class d">Class and Section:</div>
+            <div class="classd"> <input type="text" id="classandsection" class="class" required></div>
+          </div>
+          <div class="deets">
+            <div class="class d">Course:</div>
+            <div class="classd"> <input type="text" id="course" class="class" required></div>
+          </div>
+          <div class="deets">
+            <div class="rno d">Username: </div>
+            <div class="rnod"><input type="text" id="username" class="username" required></div>
+          </div>
+          <div class="deets">
+            <div class="pwd d">Password: </div>
+            <div class="pwd"><input type="password" id="password" class="password" required></div>
+          </div>
+          <div class="deets">
+            <div class="course d">Department: </div>
+            <div class="coursed"><input type="text" id="department" class="department" required></div>
+          </div>
+          <div class="deets">
+            <div class="pno d">Phone Number: </div>
+            <div class="pnod"><input type="tel" id="phone" class="phone" required></div>
+          </div>
+          <div class="deets">
+            <div class="batch d">Batch: </div>
+            <div class="batchd"><input type="text" id="batch" class="batch" required></div>
+          </div>
+          <div class="deets">
+            <div class="mail d">Mail: </div>
+            <div class="maild"><input type="text" id="mail" class="mail" required></div>
+          </div>
+          <div class="deets">
+            <div class="address d">Address:</div>
+            <div class="addressd"><input type="text" id="address" class="address" required></div>
+          </div>
+          <div class="deets">
+            <div class="bgrp d">Blood Group:</div>
+            <div class="bgrpd"><input type="text" id="bloodgrp" class="bloodgrp" required></div>
+          </div>
+        </div>
+      </div> <br><br>
+      <div class="details">
+        <h2>Enter the details of the Parents</h2>
+        <div class="user-details">
+          <div class="deets">
+            <div class="fname d">
+              Father's Name: </div>
+            <div class="fname"><input type="text" id="fathern" class="fathern" required></div>
+          </div>
+          <div class="deets">
+            <div class="mname d">Mother's Name:</div>
+            <div class="mnamed"><input type="text" id="mothern" class="mothern" required></div>
+          </div>
+          <div class="deets">
+            <div class="fno d">Father's Number:</div>
+            <div class="fnod"><input type="tel" id="fatherno" class="fatherno" required></div>
+          </div>
+          <div class="deets">
+            <div class="mno d">Mother's Number:</div>
+            <div class="mnod"><input type="tel" id="motherno" class="motherno" required></div>
+          </div>
+          <div class="deets">
+            <div class="fadd d">Address: </div>
+            <div class="faddd"><input type="text" id="paddress" class="address" required></div>
+          </div>
+          <div class="deets"></div>
+        </div>
+      </div><br>
+      <center><input type="button" id="submit" class="submit" value="Submit"></center>
+
+    </main>
+
+    <div class="right">
+      <div class="top">
+        <button id="menu-btn">
+          <span class="material-icons-sharp"> menu </span>
+        </button>
+        <div class="theme-toggler" id="theme">
+          <span class="material-icons-sharp active"> light_mode </span>
+          <span class="material-icons-sharp"> dark_mode </span>
+        </div>
+        <div class="profile">
+          <div class="info">
+            <p>Hey, <b id="user"></b></p>
+            <small class="text-muted">Admin Executive</small>
+          </div>
+
+          <a href="../admin/profile.html">
+            <div class="profile-photo">
+              <img src="..\resources\download.webp" alt="avatar" />
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="recent-updates">
+        <h2>Recent Updates</h2>
+        <div class="updates">
+          <div class="update">
+            <div class="profile-photo">
+              <img src="..\resources\848351_cup_512x512.png" alt="avatar" />
+            </div>
+            <div class="message">
+              <p><b>XACTITUDE 2022</b> at Kristu Jayanti College.</p>
+              <small class="text-muted">Team TECHNOZIA won the overalls.</small>
+            </div>
+          </div>
+          <div class="update">
+            <div class="profile-photo">
+              <img src="..\resources\848351_cup_512x512.png" alt="avatar" />
+            </div>
+            <div class="message">
+              <p><b># 2022</b> at Charan's Degree College..</p>
+              <small class="text-muted">Team TECHNOZIA won the overalls.</small>
+            </div>
+          </div>
+          <div class="update">
+            <div class="profile-photo">
+              <img src="..\resources\848351_cup_512x512.png" alt="avatar" />
+            </div>
+            <div class="message">
+              <p><b>SYNTAXIA 2022</b> at St. Joseph's College.</p>
+              <small class="text-muted">Team TECHNOZIA won the overalls.</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="upcoming-events">
+        <h2>Upcoming Events</h2>
+        <div class="update">
+          <div class="icon">
+            <span class="material-icons-sharp"> event </span>
+          </div>
+          <div class="right">
+            <div class="info">
+              <h3>Prefinals</h3>
+              <small class="text-muted">From 2nd August, 2022.</small>
+            </div>
+            <h5 class="success">Lab Prefinals.</h5>
+            <h3>
+              Attendance is mandatory.
+            </h3>
+          </div>
+        </div>
+        <div class="update">
+          <div class="icon">
+            <span class="material-icons-sharp"> event </span>
+          </div>
+          <div class="right">
+            <div class="info">
+              <h3>Fees Payment Reminder</h3>
+              <small class="text-muted">By 20th Augus, 2022.</small>
+            </div>
+            <h5 class="danger">
+              Students with outstanding payment won't be given their hallticket.
+
+            </h5>
+            <h3>
+              Everyone should pay their fees within the date.
+            </h3>
+          </div>
+        </div>
+        <div class="update">
+          <div class="icon">
+            <span class="material-icons-sharp"> event </span>
+          </div>
+          <div class="right">
+            <div class="info">
+              <h3>Practical Finals</h3>
+              <small class="text-muted">From 24th August, 2022.</small>
+            </div>
+            <h5 class="success">
+              All the best to appearing students.
+            </h5>
+            <h3>
+              Everyone is requested to be in uniform and carry their hallticket and ID card.
+            </h3>
+          </div>
+        </div>
+
+        <!-- <div class="addupdate">
+          <div class="icon">
+            <span class="material-icons-sharp">
+              add
+            </span>
+          </div>
+          <div class="adupd">
+            <div class="info">
+              <h3>Add Update</h3>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </div>
+    <script src="../js/index.js"></script>
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.1/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.9.1/firebase-analytics.js";
+
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyBaBKqVSNg1X9YhByu-Eq-jsll5Rr3ZSBo",
+        authDomain: "theprerp.firebaseapp.com",
+        projectId: "theprerp",
+        storageBucket: "theprerp.appspot.com",
+        messagingSenderId: "965186345528",
+        appId: "1:965186345528:web:00d25bf1b43ad61d86e4cd",
+        measurementId: "G-VQKKY7Q88B",
+      };
+
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+      import {
+        getDatabase,
+        ref,
+        get,
+        set,
+        child,
+        update,
+        remove,
+      } from "https://www.gstatic.com/firebasejs/9.9.1/firebase-database.js";
+      const db = getDatabase();
+
+      const name = document.getElementById('name');
+      const classandsection = document.getElementById('classandsection');
+      const course = document.getElementById('course');
+      const usern = document.getElementById('username');
+      const password = document.getElementById('password');
+      const department = document.getElementById('department');
+      const phoneno = document.getElementById('phone');
+      const joined = document.getElementById('joined');
+      const mail = document.getElementById('mail');
+      const address = document.getElementById('address');
+      const bloodgrp = document.getElementById('bloodgrp');
+      const btn = document.getElementById('submit')
+
+      const fathername = document.getElementById('fathern')
+      const mothername = document.getElementById('mothern')
+      const fatherno = document.getElementById('fatherno')
+      const motherno = document.getElementById('motherno')
+      const paddress = document.getElementById('paddress')
+
+      let userid = document.getElementById('user');
+      let logout = document.getElementById('logout');
+      var currentuser = null;
+
+      function validation() {
+        let nameregex = /^[a-zA-Z\s]+$/;
+        let mailregex = /^[a-zA-z0-9]+@(presidency)\+(.edu.in)\$/;
+        let userregex = /^[a-zA-Z0-9]{5,}$/;
+        let phoneregex = /^[0-9]{10}$/;
+
+        // if (!nameregex.test(name.value)) {
+        //   alert("Please enter only characters; Numbers and specials characters are not allowed.");
+        //   return false;
+        // }
+
+        // if(!mailregex.test(mail.value))
+        //   {
+        //     alert("Please enter a valid mail ID.");
+        //     return false;
+        //   }
+
+        // if(!userregex.test(username))
+        //   {
+        //     alert("Please enter a valid username.\n It should contain at least 5 characters.\n It shouldn't contain any special characters.")
+        //     return false;
+        //   }
+        if (!phoneregex.test(phoneno)) {
+          alert("Please enter a valid phone number.")
+          return false;
+        }
+
+        return true;
+      }
+
+      function addStudent() {
+
+        const dbref = ref(db);
+        if (usern.value != "" && name.value != "" && password.value != "" && registerno.value != "" && course.value != "" && mail.value != "" && phoneno.value != "" && department.value != "" && classandsection.value != "" && batch.value != "" && address.value != "" && bloodgrp.value != "" && fathername.value != "" && mothername.value != "" && fatherno.value != "" && motherno.value != "" && paddress.value != "") {
+          if (!validation()) {
+            return
+          }
+          get(child(dbref, "StudentList/" + usern.value)).then((snapshot) => {
+            if (snapshot.exists()) {
+              alert("Account already exists. Please check the username.");
+              name.value = '';
+              usern.value = '';
+              password.value = '';
+              registerno.value = '';
+              mail.value = '';
+              phoneno.value = '';
+              department.value = '';
+              classandsection.value = '';
+              batch.value = '';
+              address.value = '';
+              bloodgrp.value = '';
+              fathername.value = '';
+              mothername.value = '';
+              fatherno.value = '';
+              motherno.value = '';
+              paddress.value = '';
+              course.value = '';
+            }
+            else {
+              set(ref(db, "StudentList/" + usern.value),
+                {
+                  name: name.value,
+                  username: usern.value,
+                  password: password.value,
+                  registerno: registerno.value,
+                  course: course.value,
+                  mail: mail.value,
+                  phoneno: phoneno.value,
+                  department: department.value,
+                  classandsection: classandsection.value,
+                  batch: batch.value,
+                  address: address.value,
+                  bloodgrp: bloodgrp.value,
+                  fathername: fathername.value,
+                  mothername: mothername.value,
+                  fatherno: fatherno.value,
+                  motherno: motherno.value,
+                  parentaddress: paddress.value
+                })
+                .then(() => {
+                  alert("New student has been added successfully.");
+                  name.value = '';
+                  usern.value = '';
+                  password.value = '';
+                  registerno.value = '';
+                  mail.value = '';
+                  phoneno.value = '';
+                  department.value = '';
+                  classandsection.value = '';
+                  batch.value = '';
+                  address.value = '';
+                  bloodgrp.value = '';
+                  fathername.value = '';
+                  mothername.value = '';
+                  fatherno.value = '';
+                  motherno.value = '';
+                  paddress.value = '';
+                  course.value = '';
+                })
+                .catch((error) => {
+                  alert("error" + error);
+                })
+            }
+          });
+        }
+        else {
+          alert("Please fill all the fields.")
+        }
+
+      }
+
+      function username() {
+        let keepLoggedIn = localStorage.getItem("keepLoggedIn");
+
+        if (keepLoggedIn == "yes")
+          currentuser = JSON.parse(localStorage.getItem('user'));
+        else
+          currentuser = JSON.parse(sessionStorage.getItem('user'));
+      }
+
+      function signout() {
+        sessionStorage.removeItem('user');
+        localStorage.removeItem('user');
+        localStorage.removeItem('keepLoggedIn');
+        window.location = "index.html";
+      }
+
+      window.onload = function () {
+        username();
+        if (currentuser != null) {
+          user.innerText = currentuser.name;
+        }
+      }
+
+      //  
+      btn.addEventListener('click', addStudent);
+
+    </script>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"
+  integrity="sha512-E8QSvWZ0eCLGk4km3hxSsNmGWbLtSCSUcewDQPQWZF6pEU8GlT8a5fF32wOl1i8ftdMhssTrF/OhyGWwonTcXA=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</html>

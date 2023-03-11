@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../css/dashboard.css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet" />
+  <link rel="icon" href="..\resources\PRERP_SA.png" type="image/x-icon" />
+  <title>PRERP - Result</title>
+</head>
+
+<body>
+  <div class="container">
+    <aside>
+      <div class="top">
+        <div class="logo">
+          <a href="../faculty/dashboard.html"> <img src="..\resources\PRERP_SA.png" alt="" /></a>
+          <h1>PR<span class="title">ERP</span></h1>
+          <div class="close" id="close-btn">
+            <span class="material-icons-sharp"> close </span>
+          </div>
+        </div>
+        <div class="sidebar">
+          <a href="../faculty/dashboard.html"><span class="material-icons-sharp"> grid_view </span>
+            <h3>Dashboard</h3>
+          </a>
+          <a href="../faculty/profile.html"><span class="material-icons-sharp"> person </span>
+            <h3>Profile</h3>
+          </a>
+
+          <a href="../faculty/attendance.html"><span class="material-icons-sharp"> calendar_month </span>
+            <h3>View Attendance</h3>
+          </a>
+          <!-- <a href="../faculty/markattendance.html"><span class="material-icons-sharp">
+              today
+            </span>
+            <h3>Mark Attendance</h3>
+          </a> -->
+          <a href="../faculty/assignment.html"><span class="material-icons-sharp"> assignment </span>
+            <h3>Assignment</h3>
+          </a>
+          <a href="../faculty/timetable.html"><span class="material-icons-sharp"> calendar_month </span>
+            <h3>Timetable</h3>
+          </a>
+          <a href="../faculty/syllabus.html"><span class="material-icons-sharp">
+              summarize
+            </span>
+            <h3>Syllabus</h3>
+          </a>
+          <a href="../faculty/clubactivities.html"><span class="material-icons-sharp">
+              groups
+            </span>
+            <h3>Club Activities</h3>
+          </a>
+          <a href="../faculty/examtimetable.html"><span class="material-icons-sharp"> calendar_month </span>
+            <h3>Exam Timetable</h3>
+          </a>
+          <a href="../faculty/result.html" class="active"><span class="material-icons-sharp"> summarize </span>
+            <h3>Result</h3>
+          </a>
+          <a href="../faculty/feedback.html"><span class="material-icons-sharp"> forum </span>
+            <h3>Feedback</h3>
+          </a>
+          <a href="../faculty/updatepassword.html" a><span class="material-icons-sharp">
+              manage_accounts
+            </span>
+            <h3>Update Password</h3>
+          </a>
+          <a href="../index.html" onclick="return confirm('Are you sure you want to Logout?')"><span
+              class="material-icons-sharp"> logout </span>
+            <h3>Logout</h3>
+          </a>
+        </div>
+      </div>
+    </aside>
+
+    <main>
+      <h1>Academic Report</h1>
+
+      <div class="date">
+        <!-- <input type="date" value="2022-08-26" /> -->
+        <label for="date">26 / 08 / 2022</label>
+      </div>
+      <div class="search">
+        Enter the ID: <input type="text" class="uid" id="username"><button class="sbtn">
+          <span class="material-icons-sharp" id="search">
+            search
+          </span>
+        </button>
+      </div>
+      <!-- <div class="insights">
+        <div class="attendance">
+          <span class="material-icons-sharp"> calendar_month </span>
+          <div class="middle">
+            <div class="left">
+              <h3>Total Attendance</h3>
+              <h1>90%</h1>
+            </div>
+            <div class="progress">
+              <svg>
+                <circle cx="38" cy="38" r="36"></circle>
+              </svg>
+              <div class="number">
+                <p>90%</p>
+              </div>
+            </div>
+          </div>
+          <small class="text-muted">Last week</small>
+        </div>
+        <div class="csp">
+          <span class="material-icons-sharp"> analytics </span>
+          <div class="middle">
+            <div class="left">
+              <h3>Current Semester Percentage</h3>
+              <h1>88%</h1>
+            </div>
+            <div class="progress">
+              <svg>
+                <circle cx="38" cy="38" r="36"></circle>
+              </svg>
+              <div class="number">
+                <p>95.9%</p>
+              </div>
+            </div>
+          </div>
+          <small class="text-muted">Last semester</small>
+        </div>
+        <div class="op">
+          <span class="material-icons-sharp"> assessment </span>
+          <div class="middle">
+            <div class="left">
+              <h3>Overall Percentage</h3>
+              <h1>88.78%</h1>
+            </div>
+            <div class="progress">
+              <svg>
+                <circle cx="38" cy="38" r="36"></circle>
+              </svg>
+              <div class="number">
+                <p>89%</p>
+              </div>
+            </div>
+          </div>
+          <small class="text-muted">Last semester</small>
+        </div>
+      </div> -->
+
+      <div class="recent-activity">
+        <h2>Midterm Examindation</h2>
+        <table>
+          <thread>
+            <tr>
+              <th>Sl. No.</th>
+              <th>Subject</th>
+              <th>Maximum Marks</th>
+              <th>Secured Marks</th>
+            </tr>
+          </thread>
+          <tbody>
+            <tr>
+              <td>1.</td>
+              <td><input type="text" id="sub1"></td>
+              <td><input type="text" min="0" id="totalmarks"></td>
+              <td><input type="text" min="0" id="securedmarks"></td>
+            </tr>
+          </tbody>
+          <tbody>
+            <tr>
+              <td>2.</td>
+              <td><input type="text" id="sub2"></td>
+              <td><input type="text" min="0" id="totalmarks2"></td>
+              <td><input type="text" min="0" id="securedmarks2"></td>
+            </tr>
+          </tbody>
+          <tbody>
+            <tr>
+              <td>3.</td>
+              <td><input type="text" id="sub3"></td>
+              <td><input type="text" min="0" id="totalmarks3"></td>
+              <td><input type="text" min="0" id="securedmarks3"></td>
+            </tr>
+          </tbody>
+          <tbody>
+            <tr>
+              <td>4.</td>
+              <td><input type="text" id="sub4"></td>
+              <td><input type="text" min="0" id="totalmarks4"></td>
+              <td><input type="text" min="0" id="securedmarks4"></td>
+            </tr>
+          </tbody>
+          <tbody>
+            <tr>
+              <td>5.</td>
+              <td><input type="text" id="sub5"></td>
+              <td><input type="text" min="0" id="totalmarks5"></td>
+              <td><input type="text" min="0" id="securedmarks5"></td>
+            </tr>
+          </tbody>
+        </table>
+        <br> <br>
+        <center><input type="submit" class="submit" value="Update" id="submit1"></center>
+      </div>
+      <div class="recent-activity">
+        <h2>Prefinal Examindation</h2>
+        <table>
+          <thread>
+            <tr>
+              <th>Sl. No.</th>
+              <th>Subject</th>
+              <th>Maximum Marks</th>
+              <th>Secured Marks</th>
+            </tr>
+          </thread>
+          <tbody>
+            <tr>
+              <td>1.</td>
+              <td><input type="text" id="psub1"></td>
+              <td><input type="text" min="0" id="ptotalmarks"></td>
+              <td><input type="text" min="0" id="psecuredmarks"></td>
+            </tr>
+          </tbody>
+          <tbody>
+            <tr>
+              <td>2.</td>
+              <td><input type="text" id="psub2"></td>
+              <td><input type="text" min="0" id="ptotalmarks2"></td>
+              <td><input type="text" min="0" id="psecuredmarks2"></td>
+            </tr>
+          </tbody>
+          <tbody>
+            <tr>
+              <td>3.</td>
+              <td><input type="text" id="psub3"></td>
+              <td><input type="text" min="0" id="ptotalmarks3"></td>
+              <td><input type="text" min="0" id="psecuredmarks3"></td>
+            </tr>
+          </tbody>
+          <tbody>
+            <tr>
+              <td>4.</td>
+              <td><input type="text" id="psub4"></td>
+              <td><input type="text" min="0" id="ptotalmarks4"></td>
+              <td><input type="text" min="0" id="psecuredmarks4"></td>
+            </tr>
+          </tbody>
+          <tbody>
+            <tr>
+              <td>5.</td>
+              <td><input type="text" id="psub5"></td>
+              <td><input type="text" min="0" id="ptotalmarks5"></td>
+              <td><input type="text" min="0" id="psecuredmarks5"></td>
+            </tr>
+          </tbody>
+        </table>
+        <br>
+        <center><input type="submit" class="submit" value="Update" id="submit2"></center> <br>
+      </div>
+    </main>
+
+    <div class="right">
+      <div class="top">
+        <button id="menu-btn">
+          <span class="material-icons-sharp"> menu </span>
+        </button>
+        <div class="theme-toggler" id="theme">
+          <span class="material-icons-sharp active"> light_mode </span>
+          <span class="material-icons-sharp"> dark_mode </span>
+        </div>
+        <div class="profile">
+          <div class="info">
+            <p>Hey, <b id="user"></b></p>
+            <small class="text-muted">Faculty </small>
+          </div>
+          <a href="../faculty/profile.html">
+            <div class="profile-photo">
+              <img src="..\resources\download.webp" alt="avatar" />
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="recent-updates">
+        <h2>Recent Updates</h2>
+        <div class="updates">
+          <div class="update">
+            <div class="profile-photo">
+              <img src="..\resources\848351_cup_512x512.png" alt="avatar" />
+            </div>
+            <div class="message">
+              <p><b>XACTITUDE 2022</b> at Kristu Jayanti College.</p>
+              <small class="text-muted">Team TECHNOZIA won the overalls.</small>
+            </div>
+          </div>
+          <div class="update">
+            <div class="profile-photo">
+              <img src="..\resources\848351_cup_512x512.png" alt="avatar" />
+            </div>
+            <div class="message">
+              <p><b># 2022</b> at Charan's Degree College..</p>
+              <small class="text-muted">Team TECHNOZIA won the overalls.</small>
+            </div>
+          </div>
+          <div class="update">
+            <div class="profile-photo">
+              <img src="..\resources\848351_cup_512x512.png" alt="avatar" />
+            </div>
+            <div class="message">
+              <p><b>SYNTAXIA 2022</b> at St. Joseph's College.</p>
+              <small class="text-muted">Team TECHNOZIA won the overalls.</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="upcoming-events">
+        <h2>Upcoming Events</h2>
+        <div class="update">
+          <div class="icon">
+            <span class="material-icons-sharp"> event </span>
+          </div>
+          <div class="right">
+            <div class="info">
+              <h3>Prefinals</h3>
+              <small class="text-muted">From 2nd August, 2022.</small>
+            </div>
+            <h5 class="success">Lab Prefinals.</h5>
+            <h3>
+              Attendance is mandatory.
+            </h3>
+          </div>
+        </div>
+        <div class="update">
+          <div class="icon">
+            <span class="material-icons-sharp"> event </span>
+          </div>
+          <div class="right">
+            <div class="info">
+              <h3>Fees Payment Reminder</h3>
+              <small class="text-muted">By 20th Augus, 2022.</small>
+            </div>
+            <h5 class="danger">
+              Students with outstanding payment won't be given their hallticket.
+
+            </h5>
+            <h3>
+              Everyone should pay their fees within the date.
+            </h3>
+          </div>
+        </div>
+        <div class="update">
+          <div class="icon">
+            <span class="material-icons-sharp"> event </span>
+          </div>
+          <div class="right">
+            <div class="info">
+              <h3>Practical Finals</h3>
+              <small class="text-muted">From 24th August, 2022.</small>
+            </div>
+            <h5 class="success">
+              All the best to appearing students.
+            </h5>
+            <h3>
+              Everyone is requested to be in uniform and carry their hallticket and ID card.
+            </h3>
+          </div>
+        </div>
+
+        <!-- <div class="addupdate">
+          <div class="icon">
+            <span class="material-icons-sharp">
+              add
+            </span>
+          </div>
+          <div class="adupd">
+            <div class="info">
+              <h3>Add Update</h3>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </div>
+    <script src="../js/index.js"></script>
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.1/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.9.1/firebase-analytics.js";
+
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyBaBKqVSNg1X9YhByu-Eq-jsll5Rr3ZSBo",
+        authDomain: "theprerp.firebaseapp.com",
+        projectId: "theprerp",
+        storageBucket: "theprerp.appspot.com",
+        messagingSenderId: "965186345528",
+        appId: "1:965186345528:web:00d25bf1b43ad61d86e4cd",
+        measurementId: "G-VQKKY7Q88B",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+      import {
+        getDatabase,
+        ref,
+        get,
+        set,
+        child,
+        update,
+        remove,
+      } from "https://www.gstatic.com/firebasejs/9.9.1/firebase-database.js";
+      const db = getDatabase();
+
+      let userid = document.getElementById('user');
+      let logout = document.getElementById('logout');
+      var currentuser = null;
+      const usern = document.getElementById('username')
+      const subject1 = document.getElementById('sub1')
+      const totalmarks = document.getElementById('totalmarks')
+      const securedmarks = document.getElementById('securedmarks')
+      const subject2 = document.getElementById('sub2')
+      const totalmarks2 = document.getElementById('totalmarks2')
+      const securedmarks2 = document.getElementById('securedmarks2')
+      const subject3 = document.getElementById('sub3')
+      const totalmarks3 = document.getElementById('totalmarks3')
+      const securedmarks3 = document.getElementById('securedmarks3')
+      const subject4 = document.getElementById('sub4')
+      const totalmarks4 = document.getElementById('totalmarks4')
+      const securedmarks4 = document.getElementById('securedmarks4')
+      const subject5 = document.getElementById('sub5')
+      const totalmarks5 = document.getElementById('totalmarks5')
+      const securedmarks5 = document.getElementById('securedmarks5')
+      const psubject1 = document.getElementById('psub1')
+      const ptotalmarks = document.getElementById('ptotalmarks')
+      const psecuredmarks = document.getElementById('psecuredmarks')
+      const psubject2 = document.getElementById('psub2')
+      const ptotalmarks2 = document.getElementById('ptotalmarks2')
+      const psecuredmarks2 = document.getElementById('psecuredmarks2')
+      const psubject3 = document.getElementById('psub3')
+      const ptotalmarks3 = document.getElementById('ptotalmarks3')
+      const psecuredmarks3 = document.getElementById('psecuredmarks3')
+      const psubject4 = document.getElementById('psub4')
+      const ptotalmarks4 = document.getElementById('ptotalmarks4')
+      const psecuredmarks4 = document.getElementById('psecuredmarks4')
+      const psubject5 = document.getElementById('psub5')
+      const ptotalmarks5 = document.getElementById('ptotalmarks5')
+      const psecuredmarks6 = document.getElementById('psecuredmarks6')
+      const btn = document.getElementById('submit1')
+      const btn1 = document.getElementById('submit2')
+      const search = document.getElementById('search')
+
+      function username() {
+        let keepLoggedIn = localStorage.getItem("keepLoggedIn");
+
+        if (keepLoggedIn == "yes")
+          currentuser = JSON.parse(localStorage.getItem('user'));
+        else
+          currentuser = JSON.parse(sessionStorage.getItem('user'));
+      }
+
+      function signout() {
+        sessionStorage.removeItem('user');
+        localStorage.removeItem('user');
+        localStorage.removeItem('keepLoggedIn');
+        window.location = "index.html";
+      }
+
+      window.onload = function () {
+        username();
+        if (currentuser != null) {
+          user.innerText = currentuser.name;
+        }
+      }
+
+      function updateMarks() {
+        if (usern.value != "" && subject1.value != "" && totalmarks.value != "" && securedmarks.value != "" && subject2.value != "" && totalmarks2.value != "" && securedmarks2.value != "" && subject3.value != "" && totalmarks3.value != "" && securedmarks3.value != "" && subject4.value != "" && totalmarks4.value != "" && securedmarks4.value != "" && subject5.value != "" && totalmarks5.value != "" && securedmarks5.value != "") {
+          update(ref(db, "StudentList/" + usern.value), {
+            username: usern.value,
+            sub1: subject1.value,
+            totalmarks1: totalmarks.value,
+            securedmarks1: securedmarks.value,
+            sub2: subject2.value,
+            totalmarks2: totalmarks2.value,
+            securedmarks2: securedmarks2.value,
+            sub3: subject3.value,
+            totalmarks3: totalmarks3.value,
+            securedmarks3: securedmarks3.value,
+            sub4: subject4.value,
+            totalmarks4: totalmarks4.value,
+            securedmarks4: securedmarks4.value,
+            sub5: subject5.value,
+            totalmarks5: totalmarks5.value,
+            securedmarks5: securedmarks5.value
+          })
+            .then(() => {
+              alert("Marks updated successfully.");
+              usern.value = ''
+              subject1.value = ''
+              totalmarks.value = ''
+              securedmarks.value = ''
+              subject2.value = ''
+              totalmarks2.value = ''
+              securedmarks2.value = ''
+              subject3.value = ''
+              totalmarks3.value = ''
+              securedmarks3.value = ''
+              subject4.value = ''
+              totalmarks4.value = ''
+              securedmarks4.value = ''
+              subject5.value = ''
+              totalmarks5.value = ''
+              securedmarks5.value = ''
+
+
+            })
+            .catch((error) => {
+              alert("Updation failed, error" + error);
+            });
+        }
+        else {
+          alert("Please fill all the fields.")
+        }
+      }
+      btn.addEventListener('click', updateMarks);
+
+      function updateMarksPre() {
+        if (usern.value != "" && psubject1.value != "" && ptotalmarks.value != "" && psecuredmarks.value != "" && psubject2.value != "" && ptotalmarks2.value != "" && psecuredmarks2.value != "" && psubject3.value != "" && ptotalmarks3.value != "" && psecuredmarks3.value != "" && psubject4.value != "" && ptotalmarks4.value != "" && psecuredmarks4.value != "" && psubject5.value != "" && ptotalmarks5.value != "" && psecuredmarks5.value != "") {
+          update(ref(db, "StudentList/" + usern.value), {
+            username: usern.value,
+            psub1: psubject1.value,
+            ptotalmarks1: ptotalmarks.value,
+            psecuredmarks1: psecuredmarks.value,
+            psub2: psubject2.value,
+            ptotalmarks2: ptotalmarks2.value,
+            psecuredmarks2: psecuredmarks2.value,
+            psub3: psubject3.value,
+            ptotalmarks3: ptotalmarks3.value,
+            psecuredmarks3: psecuredmarks3.value,
+            psub4: psubject4.value,
+            ptotalmarks4: ptotalmarks4.value,
+            psecuredmarks4: psecuredmarks4.value,
+            psub5: psubject5.value,
+            ptotalmarks5: ptotalmarks5.value,
+            psecuredmarks5: psecuredmarks5.value
+          })
+            .then(() => {
+              alert("Marks updated successfully.");
+              usern.value = ''
+              psubject1.value = ''
+              ptotalmarks.value = ''
+              psecuredmarks.value = ''
+              psubject2.value = ''
+              ptotalmarks2.value = ''
+              psecuredmarks2.value = ''
+              psubject3.value = ''
+              ptotalmarks3.value = ''
+              psecuredmarks3.value = ''
+              psubject4.value = ''
+              ptotalmarks4.value = ''
+              psecuredmarks4.value = ''
+              psubject5.value = ''
+              ptotalmarks5.value = ''
+              psecuredmarks5.value = ''
+
+
+            })
+            .catch((error) => {
+              alert("Updation failed, error" + error);
+            });
+        }
+        else {
+          alert("Please fill all the fields.")
+        }
+
+      }
+      btn1.addEventListener('click', updateMarksPre);
+
+      function viewMarks() {
+        const dbref = ref(db);
+        if (usern.value != '') {
+          get(child(dbref, "StudentList/" + usern.value)).then((snapshot) => {
+            if (snapshot.exists() && snapshot.val().sub1 != null) {
+              subject1.value = snapshot.val().sub1;
+              totalmarks.value = snapshot.val().totalmarks1;
+              securedmarks.value = snapshot.val().securedmarks1;
+              subject2.value = snapshot.val().sub2;
+              totalmarks2.value = snapshot.val().totalmarks2;
+              securedmarks2.value = snapshot.val().securedmarks2;
+              subject3.value = snapshot.val().sub3;
+              totalmarks3.value = snapshot.val().totalmarks3;
+              securedmarks3.value = snapshot.val().securedmarks3;
+              subject4.value = snapshot.val().sub4;
+              totalmarks4.value = snapshot.val().totalmarks4;
+              securedmarks4.value = snapshot.val().securedmarks4;
+              subject5.value = snapshot.val().sub5;
+              totalmarks5.value = snapshot.val().totalmarks5;
+              securedmarks5.value = snapshot.val().securedmarks5;
+            }
+            else {
+              alert("No marks found.\nPlease check the username.\nPlease add marks first if not added before.")
+            }
+          })
+            .catch((error) => {
+              alert("Fetching marks was unsuccessful., error" + error);
+            });
+        }
+        else
+          alert("Please enter the username.")
+      }
+
+      function viewMarksPre() {
+        const dbref = ref(db);
+
+        if (usern.value != '') {
+          get(child(dbref, "StudentList/" + usern.value)).then((snapshot) => {
+            if (snapshot.exists() && snapshot.val().psub1 != null) {
+              psubject1.value = snapshot.val().psub1;
+              ptotalmarks.value = snapshot.val().ptotalmarks1;
+              psecuredmarks.value = snapshot.val().psecuredmarks1;
+              psubject2.value = snapshot.val().psub2;
+              ptotalmarks2.value = snapshot.val().ptotalmarks2;
+              psecuredmarks2.value = snapshot.val().psecuredmarks2;
+              psubject3.value = snapshot.val().psub3;
+              ptotalmarks3.value = snapshot.val().ptotalmarks3;
+              psecuredmarks3.value = snapshot.val().psecuredmarks3;
+              psubject4.value = snapshot.val().psub4;
+              ptotalmarks4.value = snapshot.val().ptotalmarks4;
+              psecuredmarks4.value = snapshot.val().psecuredmarks4;
+              psubject5.value = snapshot.val().psub5;
+              ptotalmarks5.value = snapshot.val().ptotalmarks5;
+              psecuredmarks5.value = snapshot.val().psecuredmarks5;
+            }
+            else {
+              // psubject1.value = "Machine Learning";
+              // ptotalmarks.value = "100";
+              // psecuredmarks.value = "Not assigned";
+              // psubject2.value = "System Programming";
+              // ptotalmarks2.value = "100";
+              // psecuredmarks2.value = "Not assigned"
+              // psubject3.value = "Web Programming"
+              // ptotalmarks3.value = "70";
+              // psecuredmarks3.value = "Not assigned";
+              // psubject4.value = "Entrepreneurship and Innovation";
+              // ptotalmarks4.value = "70";
+              // psecuredmarks4.value = "Not assigned";
+              // psubject5.value = "Professional and Business Communication";
+              // ptotalmarks5.value = "100";
+              // psecuredmarks5.value = "Not assigned";
+              alert("No marks found.\nPlease check the username.\nPlease add marks first if not added before.")
+            }
+          })
+            .catch((error) => {
+              alert("Fetching marks was unsuccessful, error" + error);
+            });
+        }
+
+      }
+
+      search.addEventListener('click', viewMarks)
+      search.addEventListener('click', viewMarksPre)
+
+    </script>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"
+  integrity="sha512-E8QSvWZ0eCLGk4km3hxSsNmGWbLtSCSUcewDQPQWZF6pEU8GlT8a5fF32wOl1i8ftdMhssTrF/OhyGWwonTcXA=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</html>

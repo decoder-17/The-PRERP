@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/dashboard.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="..\resources\PRERP_SA.png" type="image/x-icon" />
+    <title>PRERP - Exam Timetable</title>
+  </head>
+  <body>
+    <div class="container">
+      <aside>
+        <div class="top">
+          <div class="logo">
+            <a href="../faculty/dashboard.html"><img src="..\resources\PRERP_SA.png" alt="" />
+            </a><h1>PR<span class="title">ERP</span></h1>
+            
+            <div class="close" id="close-btn">
+              <span class="material-icons-sharp"> close </span>
+            </div>
+          </div>
+          <div class="sidebar">
+            <a href="../faculty/dashboard.html" 
+              ><span class="material-icons-sharp"> grid_view </span>
+              <h3>Dashboard</h3></a
+            >
+            <a href="../faculty/profile.html"
+              ><span class="material-icons-sharp"> person </span>
+              <h3>Profile</h3></a
+            >
+
+            <a href="../faculty/attendance.html" 
+            ><span class="material-icons-sharp"> calendar_month </span>
+            <h3>View Attendance</h3></a
+          >
+          <!-- <a href="../faculty/markattendance.html" 
+            ><span class="material-icons-sharp">
+              today
+              </span>
+            <h3>Mark Attendance</h3></a
+          > -->
+            <a href="../faculty/assignment.html"
+              ><span class="material-icons-sharp"> assignment </span>
+              <h3>Assignment</h3></a
+            >
+            <a href="../faculty/timetable.html"
+            ><span class="material-icons-sharp"> calendar_month </span>
+            <h3>Timetable</h3></a
+          >
+          <a href="../faculty/syllabus.html"
+              ><span class="material-icons-sharp">
+                summarize
+                </span>
+              <h3>Syllabus</h3></a
+            >
+            <a href="../faculty/clubactivities.html" ><span class="material-icons-sharp">
+              groups
+              </span>
+            <h3>Club Activities</h3></a>
+            <a href="../faculty/examtimetable.html" class="active"
+            ><span class="material-icons-sharp"> calendar_month </span>
+            <h3>Exam Timetable</h3></a
+          >
+            <a href="../faculty/result.html"
+              ><span class="material-icons-sharp"> summarize </span>
+              <h3>Result</h3></a
+            >
+            <a href="../faculty/feedback.html"
+              ><span class="material-icons-sharp"> forum </span>
+              <h3>Feedback</h3></a
+            >
+            <a href="../faculty/updatepassword.html"a><span class="material-icons-sharp">
+              manage_accounts
+            </span>
+            <h3>Update Password</h3>
+          </a>
+             
+            <a href="../index.html" onclick="return confirm('Are you sure you want to Logout?')"
+              ><span class="material-icons-sharp"> logout </span>
+              <h3 class="logout">Logout</h3></a
+            >
+          </div>
+        </div>
+      </aside>
+
+      <main>
+        <h1>Exam Timetable</h1>
+
+        <div class="date">
+          <!-- <input type="date" value="2022-08-26" /> -->
+          <label for="date">26 / 08 / 2022</label>
+        </div>
+
+        <!-- <div class="insights">
+          <div class="attendance">
+            <span class="material-icons-sharp"> calendar_month </span>
+            <div class="middle">
+              <div class="left">
+                <h3>Total Attendance</h3>
+                <h1>90%</h1>
+              </div>
+              <div class="progress">
+                <svg>
+                  <circle cx="38" cy="38" r="36"></circle>
+                </svg>
+                <div class="number">
+                  <p>90%</p>
+                </div>
+              </div>
+            </div>
+            <small class="text-muted">Last week</small>
+          </div>
+          <div class="csp">
+            <span class="material-icons-sharp"> analytics </span>
+            <div class="middle">
+              <div class="left">
+                <h3>Current Semester Percentage</h3>
+                <h1>88%</h1>
+              </div>
+              <div class="progress">
+                <svg>
+                  <circle cx="38" cy="38" r="36"></circle>
+                </svg>
+                <div class="number">
+                  <p>95.9%</p>
+                </div>
+              </div>
+            </div>
+            <small class="text-muted">Last semester</small>
+          </div>
+          <div class="op">
+            <span class="material-icons-sharp"> assessment </span>
+            <div class="middle">
+              <div class="left">
+                <h3>Overall Percentage</h3>
+                <h1>88.78%</h1>
+              </div>
+              <div class="progress">
+                <svg>
+                  <circle cx="38" cy="38" r="36"></circle>
+                </svg>
+                <div class="number">
+                  <p>89%</p>
+                </div>
+              </div>
+            </div>
+            <small class="text-muted">Last semester</small>
+          </div>
+        </div> -->
+
+        <div class="recent-activity">
+          <center>
+            <embed src="../resources/UG_SEP_2022_1_PTT.pdf" type="" width="1200" height="800">
+          </center>
+        </div>
+      </main>
+
+      <div class="right">
+        <div class="top">
+          <button id="menu-btn">
+            <span class="material-icons-sharp"> menu </span>
+          </button>
+          <div class="theme-toggler" id="theme">
+            <span class="material-icons-sharp active" id="themeToggler"> light_mode </span>
+            <span class="material-icons-sharp" id="themeToggler"> dark_mode </span>
+          </div>
+          <div class="profile">
+            <div class="info">
+              <p>Hey, <b id="user"></b></p>
+              <small class="text-muted">Student</small>
+            </div>
+            <a href="../faculty/profile.html"><div class="profile-photo">
+              <img src="..\resources\download.webp" alt="avatar" />
+            </div></a>
+          </div>
+        </div>
+
+        <div class="recent-updates">
+          <h2>Recent Updates</h2>
+          <div class="updates">
+            <div class="update">
+              <div class="profile-photo">
+                <img src="..\resources\848351_cup_512x512.png" alt="avatar" />
+              </div>
+              <div class="message">
+                <p><b>XACTITUDE 2022</b> at Kristu Jayanti College.</p>
+                <small class="text-muted">Team TECHNOZIA won the overalls.</small>
+              </div>
+            </div>
+            <div class="update">
+              <div class="profile-photo">
+                <img src="..\resources\848351_cup_512x512.png" alt="avatar" />
+              </div>
+              <div class="message">
+                <p><b># 2022</b> at Charan's Degree College..</p>
+                <small class="text-muted">Team TECHNOZIA won the overalls.</small>
+              </div>
+            </div>
+            <div class="update">
+              <div class="profile-photo">
+                <img src="..\resources\848351_cup_512x512.png" alt="avatar" />
+              </div>
+              <div class="message">
+                <p><b>SYNTAXIA 2022</b> at St. Joseph's College.</p>
+                <small class="text-muted">Team TECHNOZIA won the overalls.</small>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="upcoming-events">
+          <h2>Upcoming Events</h2>
+          <div class="update">
+            <div class="icon">
+              <span class="material-icons-sharp"> event </span>
+            </div>
+            <div class="right">
+              <div class="info">
+                <h3>Prefinals</h3>
+                <small class="text-muted">From 2nd August, 2022.</small>
+              </div>
+              <h5 class="success">Lab Prefinals.</h5>
+              <h3>
+                Attendance is mandatory.
+              </h3>
+            </div>
+          </div>
+          <div class="update">
+            <div class="icon">
+              <span class="material-icons-sharp"> event </span>
+            </div>
+            <div class="right">
+              <div class="info">
+                <h3>Fees Payment Reminder</h3>
+                <small class="text-muted">By 20th Augus, 2022.</small>
+              </div>
+              <h5 class="danger">
+                Students with outstanding payment won't be given their hallticket.
+  
+              </h5>
+              <h3>
+                Everyone should pay their fees within the date.
+              </h3>
+            </div>
+          </div>
+          <div class="update">
+            <div class="icon">
+              <span class="material-icons-sharp"> event </span>
+            </div>
+            <div class="right">
+              <div class="info">
+                <h3>Practical Finals</h3>
+                <small class="text-muted">From 24th August, 2022.</small>
+              </div>
+              <h5 class="success">
+                All the best to appearing students.
+              </h5>
+              <h3>
+                Everyone is requested to be in uniform and carry their hallticket and ID card.
+              </h3>
+            </div>
+          </div>
+          
+    </div>
+    <script src="../js/index.js"></script>
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.1/firebase-app.js";
+           import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.9.1/firebase-analytics.js";
+     
+           // TODO: Add SDKs for Firebase products that you want to use
+           // https://firebase.google.com/docs/web/setup#available-libraries
+     
+           // Your web app's Firebase configuration
+           // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+           const firebaseConfig = {
+             apiKey: "AIzaSyBaBKqVSNg1X9YhByu-Eq-jsll5Rr3ZSBo",
+             authDomain: "theprerp.firebaseapp.com",
+             projectId: "theprerp",
+             storageBucket: "theprerp.appspot.com",
+             messagingSenderId: "965186345528",
+             appId: "1:965186345528:web:00d25bf1b43ad61d86e4cd",
+             measurementId: "G-VQKKY7Q88B",
+           };
+     
+           // Initialize Firebase
+           const app = initializeApp(firebaseConfig);
+           const analytics = getAnalytics(app);
+           import {
+             getDatabase,
+             ref,
+             get,
+             set,
+             child,
+             update,
+             remove,
+           } from "https://www.gstatic.com/firebasejs/9.9.1/firebase-database.js";
+           const db = getDatabase();
+           
+           let userid = document.getElementById('user');
+           let logout = document.getElementById('logout');
+           var currentuser = null;
+     
+           function username()
+           {
+             let keepLoggedIn = localStorage.getItem("keepLoggedIn");
+     
+             if(keepLoggedIn=="yes")
+             currentuser = JSON.parse(localStorage.getItem('user'));
+             else
+             currentuser = JSON.parse(sessionStorage.getItem('user'));
+           }
+     
+           function signout(){
+             sessionStorage.removeItem('user');
+             localStorage.removeItem('user');
+             localStorage.removeItem('keepLoggedIn');
+             window.location="../index.html";
+           }
+     
+           window.onload = function()
+           {
+               username();
+               if(currentuser!=null){
+                 user.innerText = currentuser.name;
+               }   
+           }
+     
+            
+     
+     </script>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js" integrity="sha512-E8QSvWZ0eCLGk4km3hxSsNmGWbLtSCSUcewDQPQWZF6pEU8GlT8a5fF32wOl1i8ftdMhssTrF/OhyGWwonTcXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script></html>
