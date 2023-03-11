@@ -1,0 +1,10 @@
+version: '3'
+services:
+  web:
+    image: ThePRERP
+    build: .
+    container_name: ThePRERP
+    restart: always
+    ports:
+      - "8080:80"
+    
